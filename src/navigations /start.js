@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserContext from "../context/auth";
 import { AuthNavigationContainer } from "./auth";
 import { HomeDrawerContainer } from "./home/drawer";
+import { FanTankNftMarketplace } from "./fantanknftmarketplace";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="Home"
         component={HomeDrawerContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FanTankNftMarketplace"
+        component={FanTankNftMarketplace}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

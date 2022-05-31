@@ -3,14 +3,16 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons'
 
-const SingleNFT = () => {
+export const SingleNFT = ({navigation}) => {
     return (
         <View style={styles.container} >
-            <StatusBar style="light" />
             <ScrollView>
-                <ImageBackground source={require('../../assets/FinancialServices/artist.png')} style={{ height: 521, marginTop: 35, paddingHorizontal: 15 }} >
+                <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/artist.png')} style={{ height: 521, marginTop: 35, paddingHorizontal: 15 }} >
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 10 }} >
-                        <MaterialIcons name="arrow-back-ios" size={24} color="white" />
+                        <TouchableWithoutFeedback onPress={() => navigation.goBack()} >
+                            <MaterialIcons name="arrow-back-ios" size={24} color="white" />
+                        </TouchableWithoutFeedback>
+
                         <View style={{ flexDirection: "row", alignItems: "center" }} >
                             <TouchableWithoutFeedback onPress={() => navigation.navigate('ConnectWallet')} >
                                 <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: "#1A1A1A", paddingVertical: 6, paddingHorizontal: 6, borderRadius: 30, borderColor: "#444444", borderWidth: 1 }} >
@@ -25,11 +27,11 @@ const SingleNFT = () => {
                     </View>
 
                 </ImageBackground>
-                <View style={{ paddingHorizontal: 20, borderTopEndRadius: 30,borderTopStartRadius: 30, backgroundColor: "#000",position:"relative",marginTop:-30, }} >
+                <View style={{ paddingHorizontal: 20, borderTopEndRadius: 30, borderTopStartRadius: 30, backgroundColor: "#000", position: "relative", marginTop: -30, }} >
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 50 }} >
                         <Text style={{ fontSize: 22, fontWeight: "700", color: "#fff" }} >Niken Dewanil</Text>
                         <View style={{ flexDirection: "row", alignItems: "center" }} >
-                            <Image style={{ height: 21.82, width: 21.82, marginRight: 10 }} source={require('../../assets/fitbit-token.png')} />
+                            <Image style={{ height: 21.82, width: 21.82, marginRight: 10 }} source={require('../../common/assets/images/artistlist/fitbit-token.png')} />
                             <Text style={{ fontSize: 22, color: "#fff" }} >100</Text>
                         </View>
 
@@ -50,7 +52,6 @@ const SingleNFT = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#000",
+        flex: 1
     }
 })
-
-export default SingleNFT
