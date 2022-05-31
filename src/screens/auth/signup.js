@@ -117,7 +117,11 @@ export const SignupScreen = ({ navigation }) => {
             </FormControl>
 
             <Spacer />
-            <Button w={"100%"} colorScheme="primary">
+            <Button
+              w={"100%"}
+              colorScheme="primary"
+              onPress={() => navigation.navigate("OnBoarding")}
+            >
               Continue
             </Button>
 

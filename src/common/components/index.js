@@ -9,3 +9,6 @@ export * from "./artistcomponents";
 export * from "./searchcomponents";
 export * from "./button";
 export * from "./customtabbutton";
+export * from "./customcheckbox";
+export * from "./custommulicheckbox";
+export * from "./customswitch";
