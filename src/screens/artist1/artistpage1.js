@@ -157,7 +157,7 @@ export const ArtistPage = ({ navigation }) => {
                 Message
               </Button>
               <TouchableNativeFeedback
-                onPress={() => navigation.navigate("artistMore")}
+                onPress={() => navigation.navigate("ArtistMore")}
               >
                 <Icon
                   as={Entypo}

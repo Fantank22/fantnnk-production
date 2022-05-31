@@ -116,7 +116,7 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttons}
-          onPress={() => console.log("Hello2")}
+          onPress={() => navigation.goBack()}
         >
           <Buttons title={"Cancel"} outline={true} />
         </TouchableOpacity>

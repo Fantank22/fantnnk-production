@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ArtistPage } from "../../screens";
+import { ArtistPage, ArtistToTrack, ArtistMore } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +20,17 @@ export const ArtistOneStartContainer = () => {
       <Stack.Screen
         name="Artist1Detail"
         component={ArtistPage}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="ArtistToTrack"
+        component={ArtistToTrack}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ArtistMore"
+        component={ArtistMore}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

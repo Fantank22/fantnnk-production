@@ -36,7 +36,6 @@ export const HomeDrawerContainer = ({ navigation }) => {
         name="ArtrepreneurStartDrawer"
         component={ArtrepreneurStartContainer}
       />
-
       <Drawer.Screen name="SendFanBit" component={SendFanBitStartContainer} />
     </Drawer.Navigator>
   );
