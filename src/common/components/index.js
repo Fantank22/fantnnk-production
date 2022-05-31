@@ -8,3 +8,4 @@ export * from "./socialbuttons";
 export * from "./artistcomponents";
 export * from "./searchcomponents";
 export * from "./button";
+export * from "./customtabbutton";

@@ -12,9 +12,10 @@ const Stack = createNativeStackNavigator();
 export const StartApp = () => {
   const { user } = useContext(UserContext);
 
-  if (user !== null) {
-    return <ActivityIndicator />;
-  }
+  //TODO:check the user status and redirect to home page
+  // if (user !== null) {
+  //   return <ActivityIndicator />;
+  // }
 
   return (
     <Stack.Navigator>

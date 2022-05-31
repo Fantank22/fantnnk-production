@@ -3,7 +3,10 @@ import React, { useState } from "react";
 const UserContext = React.createContext();
 
 export const UserProvider = (props) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    name: "Md Abdullah Al Noman",
+    email: "yabdullahalnoman@gmail.com",
+  });
 
   const updateData = () => {
     console.log("Update me");

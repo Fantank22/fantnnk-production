@@ -1,12 +1,18 @@
+import { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+import { CustomTabButton } from "../../common";
 import { HomeRoutesContainer } from "./home";
+import UserContext from "../../context/auth";
+import { MessageStartContainer } from "../message/start";
 
 const Tab = createBottomTabNavigator();
 
 export const HomeStartRoutesContainer = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -53,6 +59,48 @@ export const HomeStartRoutesContainer = () => {
           };
         }}
       />
+
+      {user !== null && (
+        <>
+          <Tab.Screen
+            name="ArtistProfile"
+            component={HomeRoutesContainer}
+            options={{
+              tabBarLabel: "Invest",
+            }}
+          />
+          <Tab.Screen
+            name="Middle"
+            component={HomeRoutesContainer}
+            options={{
+              tabBarButton: (props) => <CustomTabButton {...props} />,
+            }}
+          />
+
+          <Tab.Screen
+            name="Message"
+            component={MessageStartContainer}
+            options={({ route }) => {
+              const routeName = getFocusedRouteNameFromRoute(route) ?? "";
+
+              if (routeName === "MessageDetails") {
+                return {
+                  tabBarStyle: {
+                    display: "none",
+                  },
+                };
+              }
+            }}
+          />
+          <Tab.Screen
+            name="Network"
+            component={HomeRoutesContainer}
+            options={{
+              tabBarLabel: "Network",
+            }}
+          />
+        </>
+      )}
     </Tab.Navigator>
   );
 };

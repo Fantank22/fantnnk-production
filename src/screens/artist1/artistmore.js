@@ -70,7 +70,7 @@ export const ArtistMore = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttons}
-          onPress={() => console.log("Hello2")}
+          onPress={() => navigation.navigate("FanTankNftMarketplace")}
         >
           <Buttons title={"Buy FanBit"} outline={true} />
         </TouchableOpacity>
