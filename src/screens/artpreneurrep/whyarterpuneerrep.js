@@ -12,6 +12,7 @@ import React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import { WebView } from "react-native-webview";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Entypo } from '@expo/vector-icons';
 
 export const WhyArtrepreneurRep = ({ navigation }) => {
   return (
@@ -147,12 +148,42 @@ export const WhyArtrepreneurRep = ({ navigation }) => {
             scalesPageToFit={true}
             bounces={false}
             javaScriptEnabled
-            style={{ height: 211, backgroundColor: "#000" }}
+            style={{ height: 211, backgroundColor: Platform.OS === 'ios' ? "black" : 'black', marginTop: 20 }}
             source={{
-              html: ` <iframe width="100%" height="100%" src="https://player.vimeo.com/video/183338093?h=460fed8b62" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> `,
+              html: `<iframe width="1280" height="720" style="margin-top:-7px; margin-left:-8px" src="https://player.vimeo.com/video/713008586?h=3f884f0e69" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
             }}
             automaticallyAdjustContentInsets={true}
           />
+          {/* <WebView
+            scalesPageToFit={true}
+            bounces={false}
+            javaScriptEnabled
+            style={{ height: 211, backgroundColor: Platform.OS === 'ios' ? "black" : 'black',marginTop:20 }}
+            source={{
+              html: `<iframe width="1280" height="720" style="margin-top:-7px; margin-left:-8px" src="https://player.vimeo.com/video/713008586?h=3f884f0e69" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+            }}
+            automaticallyAdjustContentInsets={true}
+          /> */}
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "flex-end",marginTop:30 }} >
+          <View style={{ alignItems: "center" }} >
+            <Image source={require('../../common/assets/images/flug/ukflag.png')} />
+            <Text style={{ color: "#fff", fontSize: 16 }} >London</Text>
+          </View>
+          <View>
+            <Entypo name="dot-single" size={24} color="#F5F5F5" />
+          </View>
+          <View style={{ alignItems: "center" }} >
+            <Image source={require('../../common/assets/images/flug/usa-flag.png')} />
+            <Text style={{ color: "#fff", fontSize: 16 }} >Miami </Text>
+          </View>
+          <View>
+            <Entypo name="dot-single" size={24} color="#F5F5F5" />
+          </View>
+          <View style={{ alignItems: "center" }} >
+            <Image source={require('../../common/assets/images/flug/brazilflag.png')} />
+            <Text style={{ color: "#fff", fontSize: 16 }} >Rio </Text>
+          </View>
         </View>
       </ScrollView>
     </View>
