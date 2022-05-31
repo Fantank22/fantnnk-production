@@ -1,17 +1,19 @@
-import { View, Text, StyleSheet, ScrollView, Image } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { Entypo, MaterialIcons } from '@expo/vector-icons';
-import { Icon, Input } from 'native-base';
+import { Entypo } from '@expo/vector-icons';
+import { Input } from 'native-base';
 
-const ConnectWallet = () => {
+export const ConnectWallet = ({navigation}) => {
   return (
     <View style={styles.container} >
       <StatusBar style="light" />
       <ScrollView>
-        <Text style={{ marginTop: 10 }} > <Entypo name="cross" size={24} color="white" /></Text>
+        <TouchableOpacity onPress={() => navigation.goBack()} >
+          <Text style={{ marginTop: 10 }} > <Entypo name="cross" size={24} color="white" /></Text>
+        </TouchableOpacity>
         <View>
-          <Image style={{ alignSelf: "center" }} source={require('../../assets/FinancialServices/wallet.png')} />
+          <Image style={{ alignSelf: "center" }} source={require('../../common/assets/images/fantanknftmarketplace/wallet.png')} />
           <Text style={{ fontSize: 22, fontWeight: "700", color: "#fff", textAlign: "center", marginVertical: 20 }} >Connect with wallet</Text>
           <Text style={{ color: "#CECECE", textAlign: "center" }} >The FanTank <Text style={{ color: "white" }} >Financing Marketplace</Text> provides the following financing services for Artists, Labels, and individual investors. </Text>
         </View>
@@ -20,7 +22,7 @@ const ConnectWallet = () => {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderColor: "#464646", borderWidth: 1, padding: 10, borderRadius: 10, marginVertical: 5 }} >
             <View style={{ flexDirection: "row", alignItems: "center" }} >
               <View style={{ backgroundColor: "#444444", height: 38, width: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" }} >
-                <Image source={require('../../assets/FinancialServices/metamask.png')} />
+                <Image source={require('../../common/assets/images/fantanknftmarketplace/metamask.png')} />
               </View>
               <Text style={{ color: "#fff", marginLeft: 10, fontWeight: "500" }} >MetaMask</Text>
             </View>
@@ -29,7 +31,7 @@ const ConnectWallet = () => {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderColor: "#464646", borderWidth: 1, padding: 10, borderRadius: 10, marginVertical: 5 }} >
             <View style={{ flexDirection: "row", alignItems: "center" }} >
               <View style={{ backgroundColor: "#444444", height: 38, width: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" }} >
-                <Image source={require('../../assets/FinancialServices/TrustWallet.png')} />
+                <Image source={require('../../common/assets/images/fantanknftmarketplace/TrustWallet.png')} />
               </View>
               <Text style={{ color: "#fff", marginLeft: 10, fontWeight: "500" }} >Trust Wallet</Text>
             </View>
@@ -38,7 +40,7 @@ const ConnectWallet = () => {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderColor: "#464646", borderWidth: 1, padding: 10, borderRadius: 10, marginVertical: 5 }} >
             <View style={{ flexDirection: "row", alignItems: "center" }} >
               <View style={{ backgroundColor: "#444444", height: 38, width: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" }} >
-                <Image source={require('../../assets/FinancialServices/rainbow.png')} />
+                <Image source={require('../../common/assets/images/fantanknftmarketplace/rainbow.png')} />
               </View>
               <Text style={{ color: "#fff", marginLeft: 10, fontWeight: "500" }} >Rainbow </Text>
             </View>
@@ -47,18 +49,18 @@ const ConnectWallet = () => {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderColor: "#464646", borderWidth: 1, padding: 10, borderRadius: 10, marginVertical: 5 }} >
             <View style={{ flexDirection: "row", alignItems: "center" }} >
               <View style={{ backgroundColor: "#444444", height: 38, width: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" }} >
-                <Image source={require('../../assets/FinancialServices/coinbase.png')} />
+                <Image source={require('../../common/assets/images/fantanknftmarketplace/coinbase.png')} />
               </View>
               <Text style={{ color: "#fff", marginLeft: 10, fontWeight: "500" }} >Coinbase  </Text>
             </View>
             <Text style={{ color: "#378EF0" }} >Connected</Text>
           </View>
 
-          <View  style={{ marginVertical:5 }} >
-            <Input borderColor={'#464646'} fontSize={16} borderWidth={1} color={'#fff'} backgroundColor={'#252525'} borderRadius={10}  h={60} w={{
+          <View style={{ marginVertical: 5 }} >
+            <Input borderColor={'#464646'} fontSize={16} borderWidth={1} color={'#fff'} backgroundColor={'#252525'} borderRadius={10} h={60} w={{
               base: "100%",
               md: "25%"
-            }} type={'email'} InputLeftElement={<Image source={require('../../assets/FinancialServices/tron.png')} />} placeholder="Enter ethereum address" />
+            }} type={'email'} InputLeftElement={<Image style={{ marginLeft: 15 }} source={require('../../common/assets/images/fantanknftmarketplace/tron.png')} />} placeholder="Enter ethereum address" />
           </View>
 
         </View>
@@ -72,9 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     paddingTop: 35,
     paddingHorizontal: 15,
-    flex:1
+    flex: 1
   }
 })
 
-
-export default ConnectWallet

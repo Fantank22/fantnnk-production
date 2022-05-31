@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   StyleSheet,
+  Platform
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { FormControl, Input, Button } from "native-base";
@@ -34,17 +35,9 @@ export const SignupScreen = ({ navigation }) => {
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View style={{ padding: 20, alignItems: "center", flex: 1 }}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Login")}
-              style={{ position: "absolute", top: 90, left: 20 }}
-            >
-              <Ionicons
-                name="arrow-back-outline"
-                size={28}
-                color="white"
-                style={{ marginRight: 10 }}
-              />
-            </TouchableOpacity>
+            <View style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: Platform.OS === 'ios' ? 100 : 50 }} >
+              <Image source={require('../../common/assets/images/logo-text.png')} />
+            </View>
             <Text style={styles.screenTitle}>Sign Up</Text>
 
             <FormControl isInvalid={form.email.error} w="100%" mb={4}>
@@ -153,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "700",
     marginBottom: 30,
-    marginTop: 180,
+    marginTop: 20,
   },
 
   signUpPart: {

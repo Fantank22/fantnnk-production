@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Platform
 } from "react-native";
 import { FormControl, Input, Button } from "native-base";
 
@@ -14,6 +15,7 @@ import {
   IocnButton,
   inputHandle,
   MyKeyboardAvoidingView,
+  SocianBtn,
 } from "../../common";
 
 export const LoginScreen = ({ navigation }) => {
@@ -64,11 +66,29 @@ export const LoginScreen = ({ navigation }) => {
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View style={{ padding: 20, flex: 1 }}>
+            <View style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: Platform.OS === 'ios' ? 100 : 50 }} >
+              <Image source={require('../../common/assets/images/logo-text.png')} />
+            </View>
             <Text style={styles.screenTitle}>Login</Text>
 
-            <IocnButton label="Login with Google" icon="logo-google" />
-            <IocnButton label="Login with Apple" icon="logo-apple" />
-            <IocnButton label="Login with Facebook" icon="logo-facebook" />
+            <SocianBtn
+              iconName="facebook-f"
+              backGrounColor="#378EF0"
+              iconColor="white"
+              name="Facebook"
+            />
+            <SocianBtn
+              iconName="logo-google"
+              backGrounColor="#378EF0"
+              iconColor="white"
+              name="Google"
+            />
+            <SocianBtn
+              iconName="logo-apple"
+              backGrounColor="white"
+              iconColor="black"
+              name="Apple"
+            />
             <Divider tip="OR" />
 
             <FormControl isInvalid={form.email.error} w="100%" mb={4}>
@@ -147,7 +167,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "700",
     marginBottom: 30,
-    marginTop: 180,
+    marginTop: 20,
     textAlign: "center",
   },
 

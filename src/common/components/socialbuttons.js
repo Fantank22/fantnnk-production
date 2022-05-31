@@ -16,7 +16,7 @@ export const SocianBtn = ({ iconName, backGrounColor, iconColor, name }) => {
         paddingVertical: 15,
       }}
     >
-      <Text
+      <View
         style={{
           position: "absolute",
           left: 20,
@@ -33,7 +33,7 @@ export const SocianBtn = ({ iconName, backGrounColor, iconColor, name }) => {
         ) : (
           <Ionicons name={iconName} size={25} color={iconColor} />
         )}
-      </Text>
+      </View>
       <Text style={{ color: iconColor, fontSize: 16, marginLeft: 30 }}>
         {" "}
         Continue with {name}{" "}
