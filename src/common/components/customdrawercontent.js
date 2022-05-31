@@ -105,6 +105,24 @@ export const CustomDrawerContent = ({ navigation }) => {
                   </HStack>
                 </HStack>
               </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("FanTankNftMarketplace")}
+              >
+                <HStack
+                  alignItems={"center"}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
+                >
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                    FanTank NFT Marketplace
+                    </Text>
+                  </HStack>
+                </HStack>
+              </TouchableOpacity>
 
               <HStack
                 alignItems={"center"}
