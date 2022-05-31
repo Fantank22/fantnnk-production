@@ -1,10 +1,17 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 
-export const SocianBtn = ({ iconName, backGrounColor, iconColor, name }) => {
+export const SocianBtn = ({
+  iconName,
+  backGrounColor,
+  iconColor,
+  name,
+  onPress,
+}) => {
   return (
-    <View
+    <TouchableOpacity
       style={{
         flexDirection: "row",
         alignItems: "center",
@@ -15,6 +22,7 @@ export const SocianBtn = ({ iconName, backGrounColor, iconColor, name }) => {
         marginVertical: 8,
         paddingVertical: 15,
       }}
+      onPress={() => onPress()}
     >
       <View
         style={{
@@ -38,6 +46,6 @@ export const SocianBtn = ({ iconName, backGrounColor, iconColor, name }) => {
         {" "}
         Continue with {name}{" "}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };

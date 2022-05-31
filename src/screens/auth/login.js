@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { FormControl, Input, Button } from "native-base";
 
+import * as Facebook from "expo-facebook";
+
 import {
   Divider,
   IocnButton,
@@ -62,6 +64,37 @@ export const LoginScreen = ({ navigation }) => {
     navigation.navigate("Home");
   };
 
+  const faceBook = async () => {
+    try {
+      await Facebook.initializeAsync({
+        appId: "436337618329493",
+      });
+      const { type, token, expirationDate, permissions, declinedPermissions } =
+        await Facebook.logInWithReadPermissionsAsync({
+          permissions: ["public_profile"],
+        });
+      if (type === "success") {
+        // Get the user's name using Facebook's Graph API
+        const response = await fetch(
+          `https://graph.facebook.com/me?access_token=${token}`
+        );
+
+        const name = await response.json().name;
+        setUser({
+          name: name,
+          email: "test@gmail.com",
+          token: 200,
+        });
+
+        navigation.navigate("Home");
+      } else {
+        // type === 'cancel'
+      }
+    } catch ({ message }) {
+      alert(`Facebook Login Error: ${message}`);
+    }
+  };
+
   return (
     <View
       style={{
@@ -94,6 +127,7 @@ export const LoginScreen = ({ navigation }) => {
               backGrounColor="#378EF0"
               iconColor="white"
               name="Facebook"
+              onPress={faceBook}
             />
             <SocianBtn
               iconName="logo-google"
