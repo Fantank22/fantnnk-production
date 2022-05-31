@@ -1,5 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ArtistPage, Filter, IntakeQuestionnaire, Search2, Search3, SearchHome, TalentBookingService } from "../../screens";
+import {
+  ArtistPage,
+  Filter,
+  IntakeQuestionnaire,
+  Search2,
+  Search3,
+  SearchHome,
+  TalentBookingService,
+} from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +26,7 @@ export const SearchStartContainer = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="SearchHome"
+        name="SearchHomeIndex"
         component={SearchHome}
         options={{ headerShown: false }}
       />
@@ -30,19 +38,19 @@ export const SearchStartContainer = () => {
       <Stack.Screen
         name="Search3"
         component={Search3}
-        options={getHeaderOption('Search')}
+        options={getHeaderOption("Search")}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="TalentBookingService"
         component={TalentBookingService}
         options={{ headerShown: false }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="IntakeQuestionnaire"
         component={IntakeQuestionnaire}
         options={{ headerShown: false }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="Filter"
         component={Filter}
         options={{ headerShown: false }}
