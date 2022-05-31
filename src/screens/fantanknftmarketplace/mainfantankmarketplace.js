@@ -24,12 +24,18 @@ export const MainFantankMarketplace = ({ navigation }) => {
                         <View style={{ flexDirection: "row", alignItems: "center" }} >
                             <TouchableOpacity onPress={() => navigation.navigate('ConnectWallet')} >
                                 <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: "#1A1A1A", paddingVertical: 6, paddingHorizontal: 6, borderRadius: 30, borderColor: "#444444", borderWidth: 1 }} >
-                                    <View style={{ backgroundColor: "#444444", borderRadius: 20, paddingVertical: 5, paddingHorizontal: 5, marginRight: 5 }} ><Ionicons name="wallet" size={18} color="#A9A9A9" /></View>
+                                    <View style={{ backgroundColor: "#444444", borderRadius: 20, paddingVertical: 5, paddingHorizontal: 5, marginRight: 5 }} >
+                                        <Ionicons name="wallet" size={18} color="#A9A9A9" />
+                                    </View>
                                     <Text style={{ color: "#378EF0", marginRight: 5 }} >Connect Wallet</Text>
                                 </View>
                             </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('Favourites')} >
+                                <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} >
+                                    <Ionicons name="heart-outline" size={20} color="#A9A9A9" />
+                                </View>
+                            </TouchableOpacity>
 
-                            <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} ><Ionicons name="heart-outline" size={20} color="#A9A9A9" /></View>
                             <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} ><Feather name="menu" size={20} color="#A9A9A9" /></View>
                         </View>
                     </View>
@@ -39,19 +45,19 @@ export const MainFantankMarketplace = ({ navigation }) => {
                 <View style={{ paddingLeft: 15 }} >
                     <Text style={{ fontWeight: "700", fontSize: 18, color: "#fff", marginVertical: 20 }} >Notable Drops</Text>
                     <ScrollView horizontal >
-                        {[1,2,3,4].map((d,i) => (
-                        <TouchableOpacity key={i} onPress={() => navigation.navigate('SingleNFT')} >
-                            <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/notable.png')} style={{ width: 190, height: 214, justifyContent: "space-between", padding: 10, marginRight: 20 }} >
-                                <View style={{ backgroundColor: "#5CAABD", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, alignSelf: "flex-end" }} ><Ionicons name="heart" size={20} color="red" /></View>
-                                <View>
-                                    <Text style={{ color: "#fff", fontWeight: "700" }} >Niken Dewanil</Text>
-                                    <View style={{ flexDirection: "row", alignItems: "center" }} >
-                                        <Image source={require('../../common/assets/images/fantanknftmarketplace/tron.png')} />
-                                        <Text style={{ fontSize: 12, color: "#CDCACA", marginLeft: 5 }} >100</Text>
+                        {[1, 2, 3, 4].map((d, i) => (
+                            <TouchableOpacity key={i} onPress={() => navigation.navigate('SingleNFT')} >
+                                <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/notable.png')} style={{ width: 190, height: 214, justifyContent: "space-between", padding: 10, marginRight: 20 }} >
+                                    <View style={{ backgroundColor: "#5CAABD", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, alignSelf: "flex-end" }} ><Ionicons name="heart" size={20} color="red" /></View>
+                                    <View>
+                                        <Text style={{ color: "#fff", fontWeight: "700" }} >Niken Dewanil</Text>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }} >
+                                            <Image source={require('../../common/assets/images/fantanknftmarketplace/tron.png')} />
+                                            <Text style={{ fontSize: 12, color: "#CDCACA", marginLeft: 5 }} >100</Text>
+                                        </View>
                                     </View>
-                                </View>
-                            </ImageBackground>
-                        </TouchableOpacity>
+                                </ImageBackground>
+                            </TouchableOpacity>
                         ))}
 
 

@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FinancialServices,MainFantankMarketplace,SingleNFT } from "../../screens";
+import { FinancialServices,MainFantankMarketplace,SingleNFT ,Favourites,ConnectWallet} from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +31,17 @@ export const FanTankNftMarketplace = () => {
       <Stack.Screen
         name="SingleNFT"
         component={SingleNFT}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="Favourites"
+        component={Favourites}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ConnectWallet"
+        component={ConnectWallet}
         options={{ headerShown: false }}
       />
 
