@@ -7,3 +7,4 @@ export * from "./artist1";
 export * from "./artist2";
 export * from "./search";
 export * from "./fantanknftmarketplace";
+export * from "./sendfanbit";

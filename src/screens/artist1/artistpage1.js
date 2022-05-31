@@ -8,7 +8,7 @@ import {
   SafeAreaView,
   StatusBar,
   ScrollView,
-  Platform
+  Platform,
 } from "react-native";
 import React from "react";
 // import Appber from "../../Components/Appber/Appber";
@@ -32,7 +32,7 @@ export const ArtistPage = ({ navigation }) => {
         style={{
           backgroundColor: "#121212",
           marginTop: -80,
-          marginBottom: 40
+          marginBottom: 40,
         }}
       >
         <ImageBackground
@@ -65,10 +65,10 @@ export const ArtistPage = ({ navigation }) => {
           </HStack>
 
           <View>
-
-            <HStack justifyContent="space-between"
+            <HStack
+              justifyContent="space-between"
               direction="row"
-              alignItems={'center'}
+              alignItems={"center"}
               my={3}
             >
               <GraphTab />
@@ -88,7 +88,12 @@ export const ArtistPage = ({ navigation }) => {
               borderRadius: 4,
             }}
           >
-            <HStack justifyContent="center" alignItems="center" w={'100%'} space={4}>
+            <HStack
+              justifyContent="center"
+              alignItems="center"
+              w={"100%"}
+              space={4}
+            >
               <Text style={{ fontSize: 16, color: "white" }}>
                 {" "}
                 <Image
@@ -103,7 +108,7 @@ export const ArtistPage = ({ navigation }) => {
                 25% {"\n"} <Text style={{ color: "white" }}>30 Days</Text>
               </Text>
               <Button
-                onPress={() => navigation.navigate("ArtistPageSendFanbit")}
+                onPress={() => navigation.navigate("SendFanBit")}
                 style={{ borderRadius: 30, backgroundColor: "#378EF0" }}
                 px={8}
                 size="sm"
@@ -165,7 +170,7 @@ export const ArtistPage = ({ navigation }) => {
           </VStack>
         </ImageBackground>
 
-        <View style={{ marginTop: 20, paddingHorizontal: 20, }}>
+        <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
           <MediaView />
         </View>
       </ScrollView>
