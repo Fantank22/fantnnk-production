@@ -6,6 +6,7 @@ import {
   Button,
   TouchableNativeFeedback,
   TouchableOpacity,
+  Platform
 } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
@@ -48,7 +49,8 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
             style={{
               color: "white",
               position: "absolute",
-              left: onChangeValue * 2.4,
+              left: Platform.OS === 'ios' ? onChangeValue * 2.8 : onChangeValue * 2.4,
+              top: -5
             }}
             textAlign="center"
           >
@@ -57,36 +59,26 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
           <Slider
             width="80%"
             size="lg"
-            defaultValue={20}
-            colorScheme="blue"
+            defaultValue={70}
+            colorScheme="green"
             onChange={(v) => {
               setOnChangeValue(Math.floor(v));
-              // setFitBitAmount(Math.floor(v))
             }}
             onChangeEnd={(v) => {
               v && setOnChangeEndValue(Math.floor(v));
             }}
           >
-            <Slider.Track style={{ backgroundColor: "red" }}>
-              <Slider.FilledTrack style={{ backgroundColor: "#378EF0" }} />
+            <Slider.Track bg="green.100">
+              <Slider.FilledTrack bg="blue.400" />
             </Slider.Track>
-            <Slider.Thumb
-              borderWidth="1"
-              borderColor="transparent"
-              bg="transparent"
-            >
-              {/* <EvilIcons style={{ backgroundColor: "red", borderRadius: 0 }} name="check" size={24} color="white" /> */}
-              <FontAwesome5
-                style={{ backgroundColor: "#49C3EB", borderRadius: 10 }}
-                name="check-circle"
-                size={18}
-                color="white"
-              />
+            <Slider.Thumb>
+              <View style={{ backgroundColor: "#49C3EB", height: 24, width: 24, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <FontAwesome5 name="check-circle" size={18} color="white" />
+              </View>
             </Slider.Thumb>
           </Slider>
-          <Text
+          <View
             style={{
-              color: "white",
               position: "absolute",
               right: 0,
               top: 14,
@@ -98,14 +90,14 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
               fontWeight: "bold",
             }}
           >
-            {onChangeValue * 40}
-          </Text>
+            <Text style={{ color: "white" }} >{onChangeValue * 40}</Text>
+          </View>
         </Stack>
-        <Text style={{ position: "absolute", bottom: 0 }}>
+        <View style={{ flexDirection: "row" }}>
           {amount.map((i) => (
-            <Text style={{ color: "white" }}> {i} </Text>
+            <Text style={{ color: "white", marginRight: Platform.OS === 'ios' ? 14 : 8 }}> {i} </Text>
           ))}
-        </Text>
+        </View>
       </View>
       <View style={styles.buttonGroup}>
         <TouchableOpacity
