@@ -33,10 +33,16 @@ export const ForgetPasswordScreen = ({ navigation }) => {
     >
       <MyKeyboardAvoidingView>
         <ScrollView>
-          <View style={{ padding: 20, alignItems: "center", flex: 1 }}>
+          <View
+            style={{
+              padding: 20,
+              alignItems: "center",
+              flex: 1,
+            }}
+          >
             <TouchableOpacity
-              onPress={() => navigation.navigate("Login")}
-              style={{ position: "absolute", top: 90, left: 20 }}
+              onPress={() => navigation.goBack()}
+              style={{ position: "absolute", top: 80, left: 20 }}
             >
               <Ionicons
                 name="arrow-back-outline"
@@ -45,46 +51,27 @@ export const ForgetPasswordScreen = ({ navigation }) => {
                 style={{ marginRight: 10 }}
               />
             </TouchableOpacity>
-            <Text style={styles.screenTitle}>Reset Password</Text>
+            <Text
+              style={{
+                ...styles.screenTitle,
+                marginBottom: 10,
+                marginTop: 120,
+              }}
+            >
+              Forgot Your{" "}
+            </Text>
+            <Text
+              style={{ ...styles.screenTitle, marginBottom: 30, marginTop: 10 }}
+            >
+              Password?
+            </Text>
 
-            <FormControl isInvalid={form.password.error} w="100%" mb={4}>
-              <Input
-                placeholder="Password"
-                height={50}
-                onChangeText={(value) =>
-                  inputHandle("password", value, setForm)
-                }
-                type="password"
-                color={"#fff"}
-              />
-              <FormControl.ErrorMessage>
-                Try different from previous passwords.
-              </FormControl.ErrorMessage>
-            </FormControl>
-
-            <FormControl isInvalid={form.password.error} w="100%" mb={4}>
-              <Input
-                placeholder="Confirm Password"
-                height={50}
-                onChangeText={(value) =>
-                  inputHandle("password", value, setForm)
-                }
-                type="password"
-                color={"#fff"}
-              />
-              <FormControl.ErrorMessage>
-                Try different from previous passwords.
-              </FormControl.ErrorMessage>
-            </FormControl>
-
+            <Input placeholder="Email Address" />
             <Spacer />
-            <Button w={"100%"} colorScheme="primary">
-              Confirm
-            </Button>
-
-            <View style={styles.backToLogin}>
+            <Button w={"100%"}>Send Reset Link</Button>
+            <View style={styles.signUpPart}>
               <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                <Text style={styles.backToLoginText}> Back to sign in</Text>
+                <Text style={styles.signUpPartText}> Back to sign in</Text>
               </TouchableOpacity>
             </View>
           </View>

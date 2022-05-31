@@ -13,7 +13,7 @@ import UserContext from "../../context/auth";
 export const CustomDrawerContent = ({ navigation }) => {
   const [accorOpen, setAccorOpen] = useState(false);
 
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   return (
     <SafeAreaView>
@@ -118,7 +118,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                     style={{ marginLeft: 8, flex: 1 }}
                   >
                     <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    FanTank NFT Marketplace
+                      FanTank NFT Marketplace
                     </Text>
                   </HStack>
                 </HStack>
@@ -229,6 +229,10 @@ export const CustomDrawerContent = ({ navigation }) => {
               <Button
                 variant="unstyled"
                 style={{ backgroundColor: "#111315", width: 246, height: 46 }}
+                onPress={() => {
+                  setUser(null);
+                  navigation.navigate("Login");
+                }}
               >
                 <HStack alignItems={"center"}>
                   <Ionicons name="log-out-outline" size={21} color="#FFFFFF" />
@@ -236,6 +240,29 @@ export const CustomDrawerContent = ({ navigation }) => {
                     style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}
                   >
                     Logout
+                  </Text>
+                </HStack>
+              </Button>
+            </HStack>
+          )}
+
+          {user === null && (
+            <HStack
+              alignItems={"center"}
+              justifyContent={"center"}
+              style={{ marginBottom: 32 }}
+            >
+              <Button
+                variant="unstyled"
+                style={{ backgroundColor: "#111315", width: 246, height: 46 }}
+                onPress={() => navigation.navigate("Login")}
+              >
+                <HStack alignItems={"center"}>
+                  <Ionicons name="log-in-outline" size={21} color="#FFFFFF" />
+                  <Text
+                    style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}
+                  >
+                    Login
                   </Text>
                 </HStack>
               </Button>

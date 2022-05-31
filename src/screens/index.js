@@ -9,3 +9,5 @@ export * from "./search";
 export * from "./fantanknftmarketplace";
 export * from "./sendfanbit";
 export * from "./message";
+export * from "./network";
+export * from "./investment";

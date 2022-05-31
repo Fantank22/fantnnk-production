@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Platform,
+  Text as NText,
+} from "react-native";
 
 import {
   Stack,
@@ -11,6 +17,7 @@ import {
   Select,
   Button,
   useToast,
+  Text,
 } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -44,11 +51,11 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
             justifyContent={"center"}
             style={{
               marginBottom: 30,
-              marginTop: 30,
+              marginTop: Platform === "ios" ? 95 : 30,
               paddingHorizontal: 15,
             }}
           >
-            <Text style={styles.screenTitle}>{"Basic Info"}</Text>
+            <NText style={styles.screenTitle}>{"Basic Info"}</NText>
           </HStack>
 
           <Stack
@@ -190,13 +197,13 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
                   space={4}
                 >
                   <Radio value="1" colorScheme="blue" size="md" my={1}>
-                    Male
+                    <Text color="#fff">Male</Text>
                   </Radio>
                   <Radio value="2" colorScheme="blue" size="md" my={1}>
-                    Female
+                    <Text color="#fff">Female</Text>
                   </Radio>
                   <Radio value="3" colorScheme="blue" size="md" my={1}>
-                    Not to say
+                    <Text color="#fff">Not to say</Text>
                   </Radio>
                 </HStack>
               </Radio.Group>

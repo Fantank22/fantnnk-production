@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   View,
   Text,
@@ -6,15 +6,26 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Platform
+  Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { FormControl, Input, Button } from "native-base";
 
 import { inputHandle, MyKeyboardAvoidingView, Spacer } from "../../common";
+import UserContext from "../../context/auth";
 
 export const SignupScreen = ({ navigation }) => {
+  const { setUser } = useContext(UserContext);
+
   const [form, setForm] = useState({
+    name: {
+      value: "",
+      error: false,
+    },
+    username: {
+      value: "",
+      error: false,
+    },
     email: {
       value: "",
       error: false,
@@ -23,7 +34,64 @@ export const SignupScreen = ({ navigation }) => {
       value: "",
       error: false,
     },
+    confirmPassword: {
+      value: "",
+      error: false,
+    },
   });
+
+  const signupHandle = () => {
+    let errorCount = 0;
+
+    if (form.name.value === "") {
+      setForm((prev) => ({ ...prev, name: { ...prev.name, error: true } }));
+      errorCount += 1;
+    }
+
+    if (form.username.value === "") {
+      setForm((prev) => ({
+        ...prev,
+        username: { ...prev.username, error: true },
+      }));
+      errorCount += 1;
+    }
+
+    if (form.email.value === "") {
+      setForm((prev) => ({
+        ...prev,
+        email: { ...prev.email, error: true },
+      }));
+      errorCount += 1;
+    }
+
+    if (form.password.value === "") {
+      setForm((prev) => ({
+        ...prev,
+        password: { ...prev.password, error: true },
+      }));
+      errorCount += 1;
+    }
+
+    if (form.confirmPassword.value === "") {
+      setForm((prev) => ({
+        ...prev,
+        confirmPassword: { ...prev.confirmPassword, error: true },
+      }));
+      errorCount += 1;
+    }
+
+    if (errorCount !== 0) {
+      return;
+    }
+
+    setUser({
+      name: "Md Abdullah Al Noman",
+      email: form.email.value,
+      token: 200,
+    });
+
+    navigation.navigate("OnBoarding");
+  };
 
   return (
     <View
@@ -35,16 +103,25 @@ export const SignupScreen = ({ navigation }) => {
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View style={{ padding: 20, alignItems: "center", flex: 1 }}>
-            <View style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: Platform.OS === 'ios' ? 100 : 50 }} >
-              <Image source={require('../../common/assets/images/logo-text.png')} />
+            <View
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: Platform.OS === "ios" ? 100 : 50,
+              }}
+            >
+              <Image
+                source={require("../../common/assets/images/logo-text.png")}
+              />
             </View>
             <Text style={styles.screenTitle}>Sign Up</Text>
 
-            <FormControl isInvalid={form.email.error} w="100%" mb={4}>
+            <FormControl isInvalid={form.name.error} w="100%" mb={4}>
               <Input
                 placeholder="Full Name"
                 height={50}
-                onChangeText={(value) => inputHandle("email", value, setForm)}
+                onChangeText={(value) => inputHandle("name", value, setForm)}
                 type="text"
                 color={"#fff"}
               />
@@ -53,11 +130,13 @@ export const SignupScreen = ({ navigation }) => {
               </FormControl.ErrorMessage>
             </FormControl>
 
-            <FormControl isInvalid={form.email.error} w="100%" mb={4}>
+            <FormControl isInvalid={form.username.error} w="100%" mb={4}>
               <Input
                 placeholder="Username"
                 height={50}
-                onChangeText={(value) => inputHandle("email", value, setForm)}
+                onChangeText={(value) =>
+                  inputHandle("username", value, setForm)
+                }
                 type="text"
                 color={"#fff"}
               />
@@ -94,12 +173,12 @@ export const SignupScreen = ({ navigation }) => {
               </FormControl.ErrorMessage>
             </FormControl>
 
-            <FormControl isInvalid={form.password.error} w="100%" mb={4}>
+            <FormControl isInvalid={form.confirmPassword.error} w="100%" mb={4}>
               <Input
                 placeholder="Confirm Password"
                 height={50}
                 onChangeText={(value) =>
-                  inputHandle("password", value, setForm)
+                  inputHandle("confirmPassword", value, setForm)
                 }
                 type="password"
                 color={"#fff"}
@@ -110,11 +189,7 @@ export const SignupScreen = ({ navigation }) => {
             </FormControl>
 
             <Spacer />
-            <Button
-              w={"100%"}
-              colorScheme="primary"
-              onPress={() => navigation.navigate("OnBoarding")}
-            >
+            <Button w={"100%"} colorScheme="primary" onPress={signupHandle}>
               Continue
             </Button>
 

@@ -7,6 +7,7 @@ import { CustomTabButton } from "../../common";
 import { HomeRoutesContainer } from "./home";
 import UserContext from "../../context/auth";
 import { MessageStartContainer } from "../message/start";
+import { Investment, Network } from "../../screens";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,7 +65,7 @@ export const HomeStartRoutesContainer = () => {
         <>
           <Tab.Screen
             name="ArtistProfile"
-            component={HomeRoutesContainer}
+            component={Investment}
             options={{
               tabBarLabel: "Invest",
             }}
@@ -94,7 +95,7 @@ export const HomeStartRoutesContainer = () => {
           />
           <Tab.Screen
             name="Network"
-            component={HomeRoutesContainer}
+            component={Network}
             options={{
               tabBarLabel: "Network",
             }}

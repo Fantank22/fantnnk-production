@@ -83,7 +83,7 @@ export const StickyHeader = ({ navigation }) => {
                   marginRight: 5,
                 }}
               />
-              <Text style={{ color: "#fff", fontSize: 14 }}>100</Text>
+              <Text style={{ color: "#fff", fontSize: 14 }}>{user.token}</Text>
             </View>
             <Ionicons
               name="person-outline"

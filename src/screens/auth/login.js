@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
-  Platform
+  Platform,
 } from "react-native";
 import { FormControl, Input, Button } from "native-base";
 
@@ -17,8 +17,11 @@ import {
   MyKeyboardAvoidingView,
   SocianBtn,
 } from "../../common";
+import UserContext from "../../context/auth";
 
 export const LoginScreen = ({ navigation }) => {
+  const { user, setUser } = useContext(UserContext);
+
   const [form, setForm] = useState({
     email: {
       value: "",
@@ -50,7 +53,13 @@ export const LoginScreen = ({ navigation }) => {
       return;
     }
 
-    navigation.navigate("Artist");
+    setUser({
+      name: "Md Abdullah Al Noman",
+      email: form.email.value,
+      token: 200,
+    });
+
+    navigation.navigate("Home");
   };
 
   return (
@@ -66,8 +75,17 @@ export const LoginScreen = ({ navigation }) => {
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View style={{ padding: 20, flex: 1 }}>
-            <View style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: Platform.OS === 'ios' ? 100 : 50 }} >
-              <Image source={require('../../common/assets/images/logo-text.png')} />
+            <View
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: Platform.OS === "ios" ? 100 : 50,
+              }}
+            >
+              <Image
+                source={require("../../common/assets/images/logo-text.png")}
+              />
             </View>
             <Text style={styles.screenTitle}>Login</Text>
 
