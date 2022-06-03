@@ -11,7 +11,6 @@ import {
 } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
 import { ScrollView } from "native-base";
 
 export const Scouts = ({ navigation }) => {
@@ -20,12 +19,12 @@ export const Scouts = ({ navigation }) => {
 
   const ArtrepreneurLavel = () => {
     const facilitators = [
-      { title: "How It Works ", link: "BadgesRequirements" },
-      { title: "Video ", link: "BadgesRequirements" },
+      { title: "How It Works ", link: "HowItWorks" },
+      { title: "Video ", link: "Videos" },
       { title: "Badges Requirements ", link: "BadgesRequirements" },
-      { title: "FanBit ", link: "BadgesRequirements" },
+      { title: "FanBit ", link: "Fanbit" },
       { title: "Compensation Structure ", link: "BadgesRequirements" },
-      { title: "Stats ", link: "BadgesRequirements" },
+      { title: "Stats ", link: "ScoutingStats" },
     ];
     return (
       <View>
@@ -82,7 +81,7 @@ export const Scouts = ({ navigation }) => {
               marginTop: Platform === "ios" ? 40 : 30,
             }}
           >
-            <Feather name="arrow-left" size={20} color="white" />
+            <AntDesign name="arrowleft" size={24} color="white" />
           </Text>
         </TouchableWithoutFeedback>
 
@@ -153,20 +152,16 @@ export const Scouts = ({ navigation }) => {
       <View>
         <View style={styles.headerTab}>
           {tabs.map((t, i) => (
-            <>
-              <Text
-                key={i}
-                onPress={() => setIndex(i + 1)}
-                style={i + 1 === index ? styles.activeTab : styles.inactiveTab}
-              >
-                {t}
-              </Text>
-            </>
+            <TouchableOpacity key={i} onPress={() => setIndex(i + 1)}>
+              <View style={i + 1 === index ? styles.activeTab : styles.inactiveTab} >
+                <Text style={i + 1 === index ? { color: "#fff" } : { color: "#9C9A9A" }}>{t}</Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </View>
         <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
           {contants.map((t, i) => (
-            <>{i + 1 === index && <>{t}</>}</>
+            <View >{i + 1 === index && <>{t}</>}</View>
           ))}
         </View>
       </View>

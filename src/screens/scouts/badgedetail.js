@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableWithoutFeedback,
   Platform,
+  SafeAreaView
 } from "react-native";
 import React from "react";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
@@ -74,20 +75,18 @@ export const BadgeDetail = ({ navigation }) => {
     },
   ];
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
-        <Text
+        <View
           style={{
-            color: "white",
             alignSelf: "center",
             backgroundColor: "#717171",
             borderRadius: 20,
             padding: 7,
-            marginTop: Platform === "ios" ? 60 : 30,
           }}
         >
           <Feather name="x" size={24} color="white" />
-        </Text>
+        </View>
       </TouchableWithoutFeedback>
       <ScrollView>
         <View style={{ paddingHorizontal: 15 }}>
@@ -188,6 +187,7 @@ export const BadgeDetail = ({ navigation }) => {
                   {c.data.map((d, i) => (
                     <>
                       <View
+                        key={i}
                         style={{
                           flexDirection: "row",
                           justifyContent: "space-between",
@@ -373,7 +373,7 @@ export const BadgeDetail = ({ navigation }) => {
           </TouchableWithoutFeedback>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
