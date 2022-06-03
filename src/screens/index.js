@@ -11,3 +11,5 @@ export * from "./sendfanbit";
 export * from "./message";
 export * from "./network";
 export * from "./investment";
+export * from "./financialservicesproject";
+

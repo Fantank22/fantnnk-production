@@ -157,20 +157,23 @@ export const CustomDrawerContent = ({ navigation }) => {
                   </Text>
                 </HStack>
               </HStack>
-              <HStack
-                alignItems={"center"}
-                style={{ marginBottom: 15, marginLeft: 22 }}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjectListings')} >
                 <HStack
-                  justifyContent="space-between"
                   alignItems={"center"}
-                  style={{ marginLeft: 8, flex: 1 }}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
                 >
-                  <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    Financial Services{" "}
-                  </Text>
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      Financial Services{" "}
+                    </Text>
+                  </HStack>
                 </HStack>
-              </HStack>
+              </TouchableOpacity>
+
               <HStack
                 alignItems={"center"}
                 style={{ marginBottom: 15, marginLeft: 22 }}
