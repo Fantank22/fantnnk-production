@@ -6,6 +6,7 @@ import UserContext from "../context/auth";
 import { AuthNavigationContainer } from "./auth";
 import { HomeDrawerContainer } from "./home/drawer";
 import { FanTankNftMarketplace } from "./fantanknftmarketplace";
+import { FinancialServicesProjectListings } from "./financialservicesprojectlistings/start";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="FanTankNftMarketplace"
         component={FanTankNftMarketplace}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FinancialServicesProjectListings"
+        component={FinancialServicesProjectListings}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
