@@ -12,3 +12,4 @@ export * from "./customtabbutton";
 export * from "./customcheckbox";
 export * from "./custommulicheckbox";
 export * from "./customswitch";
+export * from "./financialservice";
