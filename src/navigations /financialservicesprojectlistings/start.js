@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {FinancialServicesHome, FinancialServicesProjects} from "../../screens";
+import {FinancialServicesHome, FinancialServicesNft, FinancialServicesProjects, ProjectDetails} from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +26,16 @@ export const FinancialServicesProjectListings= () => {
         name="FinancialServicesProjects"
         component={FinancialServicesProjects}
         options={ getHeaderOption('Projects') }
+      />
+      <Stack.Screen
+        name="ProjectDetails"
+        component={ProjectDetails}
+        options={ getHeaderOption('Project Details') }
+      />
+      <Stack.Screen
+        name="FinancialServicesNft"
+        component={FinancialServicesNft}
+        options={ getHeaderOption('NFT') }
       />
 
     </Stack.Navigator>

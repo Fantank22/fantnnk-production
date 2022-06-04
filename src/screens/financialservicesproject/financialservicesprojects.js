@@ -25,7 +25,7 @@ export const FinancialServicesProjects = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('ProjectDetails')} >
                 <View style={{ backgroundColor: "#252525", paddingHorizontal: 15, paddingVertical: 10, borderRadius: 5, marginVertical: 10 }} >
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }} >
                         <View style={{ width: '30%' }} >
