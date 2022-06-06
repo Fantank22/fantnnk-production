@@ -79,7 +79,7 @@ export const LoginScreen = ({ navigation }) => {
           `https://graph.facebook.com/me?access_token=${token}`
         );
 
-        const name = await response.json().name;
+        const name = await response?.json()?.name;
         setUser({
           name: name,
           email: "test@gmail.com",
