@@ -20,6 +20,7 @@ import {
   SocianBtn,
 } from "../../common";
 import UserContext from "../../context/auth";
+import { StatusBar } from "expo-status-bar";
 
 export const LoginScreen = ({ navigation }) => {
   const { user, setUser } = useContext(UserContext);
@@ -105,6 +106,7 @@ export const LoginScreen = ({ navigation }) => {
         alignItems: "center",
       }}
     >
+      <StatusBar style="light" />
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View style={{ padding: 20, flex: 1 }}>

@@ -63,7 +63,7 @@ export const FinancialServicesHome = ({ navigation }) => {
                         ))}
                     </View>
                     <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjects')} >
-                        <View style={{ backgroundColor: "#378EF0", borderRadius: 5, paddingVertical: Platform.OS === "ios" ? 20 : 15, marginHorizontal: 10, marginVertical: 20 }} >
+                        <View style={{ backgroundColor: "#378EF0", borderRadius: 5, paddingVertical: Platform.OS === "ios" ? 20 : 15, marginHorizontal: 10, marginTop: 20, marginBottom: 50 }} >
                             <Text style={{ color: "#fff", fontSize: 16, fontWeight: "700", textAlign: "center" }} >See Project Listings</Text>
                         </View>
                     </TouchableOpacity>

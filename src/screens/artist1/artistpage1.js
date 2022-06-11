@@ -6,9 +6,9 @@ import {
   Image,
   TouchableNativeFeedback,
   SafeAreaView,
-  StatusBar,
   ScrollView,
   Platform,
+  // StatusBar
 } from "react-native";
 import React from "react";
 // import Appber from "../../Components/Appber/Appber";
@@ -16,17 +16,20 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Button, HStack, Icon, Stack, VStack } from "native-base";
 import { Entypo, AntDesign } from "@expo/vector-icons";
 import { GraphTab, MediaView, StickyHeader } from "../../common";
+import{StatusBar} from 'expo-status-bar'
 
 export const ArtistPage = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
+      {/* <StatusBar
         animated={true}
         backgroundColor="#1A1A1A"
         barStyle={"dark-content"}
         showHideTransition={true}
         hidden={Platform === "ios" ? true : false}
-      />
+      /> */}
+      <StatusBar style="light" />
+
       <StickyHeader navigation={navigation} />
       <ScrollView
         style={{
@@ -74,7 +77,7 @@ export const ArtistPage = ({ navigation }) => {
               <GraphTab />
               <Image
                 style={{ height: 80, width: 70 }}
-                source={require("../../common/assets/images/artist/badge.png")}
+                source={require("../../common/assets/images/badge/badge6.png")}
               />
             </HStack>
           </View>

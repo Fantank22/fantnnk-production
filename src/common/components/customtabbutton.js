@@ -9,7 +9,7 @@ export const CustomTabButton = ({ children, onPress }) => {
         justifyContent: "center",
         alignItems: "center",
       }}
-      // onPress={onPress}
+      onPress={onPress}
     >
       <View
         style={{

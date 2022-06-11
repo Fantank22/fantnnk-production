@@ -1,9 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ArtistPage, ArtistToTrack, ArtistMore, ArtistPage4 } from "../../screens";
+import { ArtistPage3, ArtistPage4 } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
-export const ArtistOneStartContainer = () => {
+export const ArtistFourStartContainer = () => {
   const getHeaderOption = (title) => {
     return {
       title: title,
@@ -18,22 +18,10 @@ export const ArtistOneStartContainer = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Artist1Detail"
-        component={ArtistPage}
+        name="Artist1Detail4"
+        component={ArtistPage4}
         options={{ headerShown: false }}
       />
-
-      <Stack.Screen
-        name="ArtistToTrack"
-        component={ArtistToTrack}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="ArtistMore"
-        component={ArtistMore}
-        options={{ headerShown: false }}
-      />
-     
     </Stack.Navigator>
   );
 };

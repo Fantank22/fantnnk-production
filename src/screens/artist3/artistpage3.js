@@ -1,15 +1,13 @@
-
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Image, TouchableOpacity, SafeAreaView, Platform } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, ImageBackground, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Modal } from 'native-base';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { GraphTab, MediaView, StickyHeader } from "../../common";
+import { StickyHeader } from '../../common';
 
-
-export const ArtistPage2 = ({ navigation }) => {
+export const ArtistPage3 = ({ navigation }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <SafeAreaView style={styles.container} >
@@ -20,10 +18,11 @@ export const ArtistPage2 = ({ navigation }) => {
           backgroundColor: "#121212",
           marginTop: -80,
           marginBottom: 40,
+
         }}>
         <View>
           <ImageBackground
-            source={require("../../common/assets/images/artist/madyMorrell.png")}
+            source={require("../../common/assets/images/artist/randyRen.png")}
             style={{ width: "100%", height: 430 }} >
             <View
               style={{
@@ -45,7 +44,7 @@ export const ArtistPage2 = ({ navigation }) => {
                     lineHeight: 36,
                   }}
                 >
-                  Mady Morrell
+                  Artist Name
                 </Text>
                 <Text
                   style={{
@@ -68,8 +67,9 @@ export const ArtistPage2 = ({ navigation }) => {
                     marginTop: 5,
                   }}
                 >
-                  Los Angeles, CA · <Image source={require('../../common/assets/images/flug/canadian-flag.png')} />
+                  New York City, NY ·  <Image source={require('../../common/assets/images/flug/usa-flag.png')} />
                 </Text>
+
                 <View
                   style={{
                     display: "flex",
@@ -111,6 +111,7 @@ export const ArtistPage2 = ({ navigation }) => {
                     # Vocalist
                   </Text>
                 </View>
+                <Text style={{ color: "#fff", fontSize: 12 }} ># Enterprise - VP of A&R Warner Music Group </Text>
                 <View
                   style={{
                     display: "flex",
@@ -314,7 +315,7 @@ export const ArtistPage2 = ({ navigation }) => {
                   </View>
                   <View>
                     <Image
-                      source={require("../../common/assets/images/badge/badge1.png")}
+                      source={require("../../common/assets/images/badge/badge5.png")}
                       style={{ width: 70, height: 80 }}
                     />
                   </View>
@@ -523,7 +524,7 @@ export const ArtistPage2 = ({ navigation }) => {
                         1,211
                       </Text>
                     </View>
-                    <View style={{ flexDirection:"row",alignItems:"center" }} >
+                    <View style={{ flexDirection: "row", alignItems: "center" }} >
                       <AntDesign name="arrowup" size={14} color="#35C112" />
                       <Text style={{ fontSize: 12, color: "#35C112" }} >12.3%</Text>
                     </View>
@@ -559,7 +560,7 @@ export const ArtistPage2 = ({ navigation }) => {
                         1,211
                       </Text>
                     </View>
-                    <View style={{ flexDirection:"row",alignItems:"center" }} >
+                    <View style={{ flexDirection: "row", alignItems: "center" }} >
                       <AntDesign name="arrowup" size={14} color="#F23D3D" />
                       <Text style={{ fontSize: 12, color: "#F23D3D" }} >12.3%</Text>
                     </View>
@@ -658,7 +659,7 @@ export const ArtistPage2 = ({ navigation }) => {
                         1,211
                       </Text>
                     </View>
-                    <View style={{ flexDirection:"row",alignItems:"center" }} >
+                    <View style={{ flexDirection: "row", alignItems: "center" }} >
                       <AntDesign name="arrowup" size={14} color="#35C112" />
                       <Text style={{ fontSize: 12, color: "#35C112" }} >12.3%</Text>
                     </View>
@@ -735,8 +736,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    width: "100%",
-    paddingTop: Platform.OS === 'ios' ? 0 : 40,
-  },
+    width: "100%"
+  }
 });
 

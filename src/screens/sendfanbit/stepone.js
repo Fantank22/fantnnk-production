@@ -95,7 +95,7 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
         </Stack>
         <View style={{ flexDirection: "row" }}>
           {amount.map((i) => (
-            <Text style={{ color: "white", marginRight: Platform.OS === 'ios' ? 14 : 8 }}> {i} </Text>
+            <Text key={i} style={{ color: "white", marginRight: Platform.OS === 'ios' ? 14 : 8 }}> {i} </Text>
           ))}
         </View>
       </View>

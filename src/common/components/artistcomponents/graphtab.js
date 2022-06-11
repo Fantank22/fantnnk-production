@@ -22,7 +22,7 @@ export const GraphTab = () => {
     <View>
       <View style={styles.headerTab}>
         {tabs.map((t, i) => (
-          <TouchableOpacity onPress={() => setIndex(i + 1)}>
+          <TouchableOpacity key={i} onPress={() => setIndex(i + 1)}>
             <View style={i + 1 === index ? styles.activeTab : styles.allTab}>
               <Text
                 style={
@@ -36,13 +36,13 @@ export const GraphTab = () => {
         ))}
       </View>
       {contants.map((t, i) => (
-        <>
+        <View key={i} >
           {i + 1 === index && (
             <View>
-              <Text style={{ color: "white" }}>{t}</Text>
+              {t}
             </View>
           )}
-        </>
+        </View>
       ))}
     </View>
   );

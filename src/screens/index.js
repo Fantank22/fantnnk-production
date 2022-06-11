@@ -12,4 +12,7 @@ export * from "./message";
 export * from "./network";
 export * from "./investment";
 export * from "./financialservicesproject";
+export * from "./artist3";
+export * from "./contactus";
+export * from "./scouting";
 

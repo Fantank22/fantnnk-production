@@ -15,7 +15,7 @@ export const FinancialServicesNft = () => {
         <View style={styles.container} >
             <ImageBackground source={require('../../common/assets/images/artist/artist2.png')} style={{ height: "100%" }} >
                 <ScrollView style={{ backgroundColor: "rgba(0, 0, 0, 0.56)" }}  >
-                    <View style={{ backgroundColor: "#191919", margin: 10, paddingHorizontal: 30, paddingVertical: 20, borderRadius: 5 }}>
+                    <View style={{ backgroundColor: "#191919", margin: 10, paddingHorizontal: 30, paddingVertical: 20, borderRadius: 5, marginBottom: 50 }}>
                         <Image style={{ height: 289, width: "100%", borderRadius: 10 }} source={require('../../common/assets/images/financialservicesprojectlistings/projectdetails.png')} />
                         <TouchableOpacity onPress={() => openModal("bottom")}>
                             <View style={{ backgroundColor: "#000", flexDirection: "row", alignItems: "center", alignSelf: "flex-end", padding: 10, borderRadius: 10, marginTop: -50, marginRight: 20 }} >
@@ -50,7 +50,7 @@ export const FinancialServicesNft = () => {
                             </Modal.Header>
                             <Modal.Body p={0}>
                                 <View style={{ backgroundColor: "#2C2C2C" }} >
-                                    {[1, 2, 3, 4,5].map((i) => (
+                                    {[1, 2, 3, 4, 5].map((i) => (
                                         <View key={i} style={{ paddingHorizontal: 15, borderBottomColor: "#B7B7B7", borderBottomWidth: 1, }} >
                                             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginVertical: 15 }} >
                                                 <View style={{ flexDirection: "row", alignItems: "center" }} >

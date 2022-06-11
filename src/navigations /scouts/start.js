@@ -32,11 +32,6 @@ export const ScoutStartContainer = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Fanbit"
-        component={Fanbit}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="ScoutingStats"
         component={ScoutingStats}
         options={{ headerShown: false }}
