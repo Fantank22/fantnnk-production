@@ -1,23 +1,28 @@
-import { View, Text, StyleSheet, ScrollView, ImageBackground, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, ImageBackground, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Modal } from 'native-base';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { StickyHeader } from '../../common';
 
-const UserPage3 = ({navigation}) => {
+export const Artistpage5 = ({ navigation }) => {
     const [showModal, setShowModal] = useState(false);
     return (
-        <View style={styles.container} >
+        <SafeAreaView style={styles.container} >
+            <StatusBar style='light' />
+            <StickyHeader navigation={navigation} />
             <ScrollView
                 style={{
                     backgroundColor: "#121212",
                     marginTop: -80,
+                    marginBottom: 40,
                 }}>
                 <View style={styles.container}>
                     <ImageBackground
-                        source={require("../../assets/artist/Russ.png")}
-                        style={{ width: "100%", height: 430 }} >
+                        source={require("../../common/assets/images/artist/djSplice.png")}
+                        style={{ width: "100%", height: 470 }} >
                         <View
                             style={{
                                 height: "100%",
@@ -38,7 +43,7 @@ const UserPage3 = ({navigation}) => {
                                         lineHeight: 36,
                                     }}
                                 >
-                                    Russ
+                                    DJ Splice
                                 </Text>
 
                                 <Text
@@ -50,7 +55,18 @@ const UserPage3 = ({navigation}) => {
                                         marginTop: 5,
                                     }}
                                 >
-                                    Los Angeles, CA ·  <Image source={require('../../assets/artist/usa-flag.png')} />
+                                    Lihat profil Niken Dian Rahma Dewani LinkedIn, komunitas profesional...
+                                </Text>
+                                <Text
+                                    style={{
+                                        color: "#fff",
+                                        fontSize: 14,
+                                        fontWeight: "400",
+                                        lineHeight: 18,
+                                        marginTop: 5,
+                                    }}
+                                >
+                                    Bangkok, TH ·  <Image source={require('../../common/assets/images/flug/usa-flag.png')} />
                                 </Text>
 
                                 <View
@@ -80,7 +96,7 @@ const UserPage3 = ({navigation}) => {
                                             marginLeft: 10,
                                         }}
                                     >
-                                        # R&B
+                                        # Hip Hop
                                     </Text>
                                     <Text
                                         style={{
@@ -91,7 +107,7 @@ const UserPage3 = ({navigation}) => {
                                             marginLeft: 10,
                                         }}
                                     >
-                                        # Vocalist - Celebrity
+                                        # Behind the Scenes
                                     </Text>
                                 </View>
                                 <View
@@ -239,7 +255,7 @@ const UserPage3 = ({navigation}) => {
                                             }}
                                         >
                                             <Image
-                                                source={require("../../assets/artist/greengrapg.png")}
+                                                source={require("../../common/assets/images/artist/greengrapg.png")}
                                                 style={{ width: 98, height: 18 }}
                                             />
                                             <View
@@ -271,7 +287,7 @@ const UserPage3 = ({navigation}) => {
                                             }}
                                         >
                                             <Image
-                                                source={require("../../assets/artist/dangergraph.png")}
+                                                source={require("../../common/assets/images/graph/dangergraph.png")}
                                                 style={{ width: 98, height: 18 }}
                                             />
                                             <View
@@ -297,7 +313,7 @@ const UserPage3 = ({navigation}) => {
                                     </View>
                                     <View>
                                         <Image
-                                            source={require("../../assets/artist/badges10.png")}
+                                            source={require("../../common/assets/images/badge/badge3.png")}
                                             style={{ width: 70, height: 80, marginTop: -20 }}
                                         />
                                     </View>
@@ -340,7 +356,7 @@ const UserPage3 = ({navigation}) => {
                                         }}
                                     >
                                         <Image
-                                            source={require("../../assets/fitbit-token.png")}
+                                            source={require("../../common/assets/images/artistlist/fitbit-token.png")}
                                             style={{ height: 25, width: 25, marginRight: 8 }}
                                         />
                                         <Text
@@ -474,71 +490,80 @@ const UserPage3 = ({navigation}) => {
                         }} >Scouting Activity</Text>
                         <View style={{ backgroundColor: "#4B4B4C", padding: 10, borderRadius: 5, marginTop: 15 }} >
                             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
-                                <Image style={{ width: 60, height: 60, borderRadius: 30 }} source={require('../../assets/artist/djSplice.png')} />
-                                <Image style={{ width: 200, height: 45 }} source={require('../../assets/artist/greenGraph.png')} />
-                            </View>
-                            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
-                                <View>
-                                    <View style={{ flexDirection: "row", alignItems: "center" }} >
-                                        <Text style={{ color: "#fff", fontSize: 16 }} >DJ Splice </Text>
-                                        {/* <View style={{ backgroundColor: "#49C3EB", paddingHorizontal: 3, paddingVertical: 3, borderRadius: 10 }} >
-                                            <Entypo name="check" size={10} color="white" />
-                                        </View> */}
-                                    </View>
-                                    <Text style={{ color: "#fff", fontSize: 14 }} >Bangkok, TH <Image source={require('../../assets/artist/usa-flag.png')} /> </Text>
+                                <Image style={{ width: 60, height: 60, borderRadius: 30 }} source={require('../../common/assets/images/artist/nikenDewanil.png')} />
+                                <View >
                                     <View
                                         style={{
                                             display: "flex",
-                                            flexDirection: "row",
                                             alignItems: "center",
+                                            flexDirection: "row",
+                                        }}
+                                    >
+                                        <Image
+                                            source={require("../../common/assets/images/graph/greengrapg.png")}
+                                            style={{ width: 98, height: 18 }}
+                                        />
+                                        <View
+                                            style={{
+                                                marginLeft: 5,
+                                                backgroundColor: "#e7e7e766",
+                                                borderRadius: 6.47,
+                                                paddingVertical: 3.41,
+                                                paddingHorizontal: 9,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                flexDirection: "row",
+                                            }}
+                                        >
+                                            <Text style={{ color: "#ffffff99", fontSize: 9 }}>
+                                                CS
+                                            </Text>
+                                            <Text style={{ color: "#FFF", fontSize: 9 }}>
+                                                1,211
+                                            </Text>
+                                        </View>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }} >
+                                            <AntDesign name="arrowup" size={14} color="#35C112" />
+                                            <Text style={{ fontSize: 12, color: "#35C112" }} >12.3%</Text>
+                                        </View>
+                                    </View>
+                                    <View
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            flexDirection: "row",
                                             marginTop: 10,
                                         }}
                                     >
-                                        <Text
+                                        <Image
+                                            source={require("../../common/assets/images/graph/dangergraph.png")}
+                                            style={{ width: 98, height: 18 }}
+                                        />
+                                        <View
                                             style={{
-                                                color: "#378EF0",
-                                                fontSize: 12,
-                                                fontWeight: "400",
-                                                lineHeight: 18,
+                                                marginLeft: 5,
+                                                backgroundColor: "#e7e7e766",
+                                                borderRadius: 6.47,
+                                                paddingVertical: 3.41,
+                                                paddingHorizontal: 9,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                flexDirection: "row",
                                             }}
                                         >
-                                            # Music
-                                        </Text>
-                                        <Text
-                                            style={{
-                                                color: "#fff",
-                                                fontSize: 12,
-                                                fontWeight: "400",
-                                                lineHeight: 18,
-                                                marginLeft: 10,
-                                            }}
-                                        >
-                                            # Hip Hop
-                                        </Text>
-                                        <Text
-                                            style={{
-                                                color: "#fff",
-                                                fontSize: 12,
-                                                fontWeight: "400",
-                                                lineHeight: 18,
-                                                marginLeft: 10,
-                                            }}
-                                        >
-                                            # Vocalist
-                                        </Text>
+                                            <Text style={{ color: "#ffffff99", fontSize: 9 }}>
+                                                SS
+                                            </Text>
+                                            <Text style={{ color: "#FFF", fontSize: 9 }}>
+                                                1,211
+                                            </Text>
+                                        </View>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }} >
+                                            <AntDesign name="arrowup" size={14} color="#F23D3D" />
+                                            <Text style={{ fontSize: 12, color: "#F23D3D" }} >12.3%</Text>
+                                        </View>
                                     </View>
                                 </View>
-                                <View>
-                                    <TouchableOpacity onPress={() => navigation.navigate('UserPage4')} >
-                                        <Text style={{ color: "#fff", borderColor: "#fff", borderWidth: 1, paddingHorizontal: 20, paddingVertical: 5, borderRadius: 20 }} >View profile</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={{ backgroundColor: "#4B4B4C", padding: 10, borderRadius: 5, marginTop: 15 }} >
-                            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
-                                <Image style={{ width: 60, height: 60, borderRadius: 30 }} source={require('../../assets/artist/artist2.png')} />
-                                <Image style={{ width: 200, height: 45 }} source={require('../../assets/artist/Graph.png')} />
                             </View>
                             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
                                 <View>
@@ -548,7 +573,7 @@ const UserPage3 = ({navigation}) => {
                                             <FontAwesome name="dollar" size={10} color="white" />
                                         </View>
                                     </View>
-                                    <Text style={{ color: "#fff", fontSize: 14 }} >Los Angeles, CA . <Image source={require('../../assets/artist/usa-flag.png')} /> </Text>
+                                    <Text style={{ color: "#fff", fontSize: 14 }} >Los Angeles, CA . <Image source={require('../../common/assets/images/flug/usa-flag.png')} /> </Text>
                                     <View
                                         style={{
                                             display: "flex",
@@ -592,26 +617,124 @@ const UserPage3 = ({navigation}) => {
                                     </View>
                                 </View>
                                 <View>
-                                    <TouchableOpacity onPress={() => navigation.navigate('artistPage')} >
+                                    <TouchableOpacity>
                                         <Text style={{ color: "#fff", borderColor: "#fff", borderWidth: 1, paddingHorizontal: 20, paddingVertical: 5, borderRadius: 20 }} >View profile</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
                         </View>
-
+                        <View style={{ backgroundColor: "#4B4B4C", padding: 10, borderRadius: 5, marginTop: 15 }} >
+                            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
+                                <Image style={{ width: 60, height: 60, borderRadius: 30 }} source={require('../../common/assets/images/artist/randyRen.png')} />
+                                <View>
+                                    <View
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            flexDirection: "row",
+                                        }}
+                                    >
+                                        <Image
+                                            source={require("../../common/assets/images/graph/greengrapg.png")}
+                                            style={{ width: 98, height: 18 }}
+                                        />
+                                        <View
+                                            style={{
+                                                marginLeft: 5,
+                                                backgroundColor: "#e7e7e766",
+                                                borderRadius: 6.47,
+                                                paddingVertical: 3.41,
+                                                paddingHorizontal: 9,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                flexDirection: "row",
+                                            }}
+                                        >
+                                            <Text style={{ color: "#ffffff99", fontSize: 9 }}>
+                                                CS
+                                            </Text>
+                                            <Text style={{ color: "#FFF", fontSize: 9 }}>
+                                                1,211
+                                            </Text>
+                                        </View>
+                                        <View style={{ flexDirection: "row", alignItems: "center" }} >
+                                            <AntDesign name="arrowup" size={14} color="#35C112" />
+                                            <Text style={{ fontSize: 12, color: "#35C112" }} >12.3%</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
+                                <View>
+                                    <View style={{ flexDirection: "row", alignItems: "center" }} >
+                                        <Text style={{ color: "#fff", fontSize: 16 }} >Randy Ren </Text>
+                                        <View style={{ backgroundColor: "#49C3EB", paddingHorizontal: 3, paddingVertical: 3, borderRadius: 10 }} >
+                                            {/* <FontAwesome name="dollar" size={10} color="white" /> */}
+                                            <Entypo name="check" size={10} color="white" />
+                                        </View>
+                                    </View>
+                                    <Text style={{ color: "#fff", fontSize: 14 }} >New York, NY . <Image source={require('../../common/assets/images/flug/usa-flag.png')} /> </Text>
+                                    <View
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            alignItems: "center",
+                                            marginTop: 10,
+                                        }}
+                                    >
+                                        <Text
+                                            style={{
+                                                color: "#378EF0",
+                                                fontSize: 12,
+                                                fontWeight: "400",
+                                                lineHeight: 18,
+                                            }}
+                                        >
+                                            # Music
+                                        </Text>
+                                        <Text
+                                            style={{
+                                                color: "#fff",
+                                                fontSize: 12,
+                                                fontWeight: "400",
+                                                lineHeight: 18,
+                                                marginLeft: 10,
+                                            }}
+                                        >
+                                            # Pop
+                                        </Text>
+                                        <Text
+                                            style={{
+                                                color: "#fff",
+                                                fontSize: 12,
+                                                fontWeight: "400",
+                                                lineHeight: 18,
+                                                marginLeft: 10,
+                                            }}
+                                        >
+                                            # Vocalist
+                                        </Text>
+                                    </View>
+                                </View>
+                                <View>
+                                    <TouchableOpacity onPress={() => navigation.navigate('UserPage2')} >
+                                        <Text style={{ color: "#fff", borderColor: "#fff", borderWidth: 1, paddingHorizontal: 20, paddingVertical: 5, borderRadius: 20 }} >View profile</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </View>
                     </View>
 
                 </View>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#000",
-        width: "100%",
-        marginTop: 50
+        width: "100%"
     },
 
     bottom: {
@@ -620,4 +743,3 @@ const styles = StyleSheet.create({
     },
 });
 
-export default UserPage3

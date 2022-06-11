@@ -4,26 +4,29 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
-  StatusBar as IosStatusBar,
+  // StatusBar as IosStatusBar,
   TouchableOpacity,
   SafeAreaView,
   Platform,
   ScrollView
 } from "react-native";
-import { EvilIcons } from "@expo/vector-icons";
+import { EvilIcons, Feather } from "@expo/vector-icons";
+import { StatusBar } from 'expo-status-bar'
 
 import { StickyHeader } from "../../common";
 
 export const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <IosStatusBar
+      {/* <IosStatusBar
         animated={true}
         backgroundColor="#1A1A1A"
         barStyle={"dark-content"}
         showHideTransition={true}
         hidden={Platform === "ios" ? true : false}
-      />
+      /> */}
+      <StatusBar style="light" />
+
       <StickyHeader navigation={navigation} />
       <ScrollView
         style={{
@@ -40,7 +43,7 @@ export const HomeScreen = ({ navigation }) => {
           </Text>
 
           <TouchableOpacity onPress={() => navigation.navigate('SearchHome')} >
-            <View style={{ backgroundColor: "#2B2B2B", flexDirection: "row",alignItems:"center", paddingVertical: 10, paddingHorizontal: 20, borderRadius: 10 }} >
+            <View style={{ backgroundColor: "#2B2B2B", flexDirection: "row", alignItems: "center", paddingVertical: 10, paddingHorizontal: 20, borderRadius: 10 }} >
               <EvilIcons name="search" size={24} color={'#C5BBBB'} />
               <Text style={{ color: "#C5BBBB", fontSize: 12, marginLeft: 10 }} >Artists, Scouts, Art Forms, etc</Text>
             </View>
@@ -117,41 +120,89 @@ export const HomeScreen = ({ navigation }) => {
                   borderWidth: 1,
                   marginBottom: 5,
                 }}
-                source={require("../../common/assets/images/home/t1.png")}
+                source={require("../../common/assets/images/artist/madyMorrell.png")}
               />
-              <Text style={{ color: "white", fontSize: 12 }}>Wade Warren</Text>
+              <Text style={{ color: "white", fontSize: 12 }}>Mady Morrell</Text>
             </View>
           </TouchableOpacity>
-          <View style={{ alignItems: "center", marginRight: 18 }}>
-            <Image
-              style={{
-                height: 60,
-                width: 60,
-                borderRadius: 30,
-                borderColor: "white",
-                borderWidth: 1,
-                marginBottom: 5,
-              }}
-              source={require("../../common/assets/images/home/t2.png")}
-            />
-            <Text style={{ color: "white", fontSize: 12 }}>Jenny Wilson</Text>
-          </View>
-          <View style={{ alignItems: "center", marginRight: 18 }}>
-            <Image
-              style={{
-                height: 60,
-                width: 60,
-                borderRadius: 30,
-                borderColor: "white",
-                borderWidth: 1,
-                marginBottom: 5,
-              }}
-              source={require("../../common/assets/images/home/t3.png")}
-            />
-            <Text style={{ color: "white", fontSize: 12 }}>
-              Ronald Richards
-            </Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Artist3")}
+          >
+            <View style={{ alignItems: "center", marginRight: 18 }}>
+              <Image
+                style={{
+                  height: 60,
+                  width: 60,
+                  borderRadius: 30,
+                  borderColor: "white",
+                  borderWidth: 1,
+                  marginBottom: 5,
+                }}
+                source={require("../../common/assets/images/artist/randyRen.png")}
+              />
+              <Text style={{ color: "white", fontSize: 12 }}>Randy Ren</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Artist4")}
+          >
+            <View style={{ alignItems: "center", marginRight: 18 }}>
+              <Image
+                style={{
+                  height: 60,
+                  width: 60,
+                  borderRadius: 30,
+                  borderColor: "white",
+                  borderWidth: 1,
+                  marginBottom: 5,
+                }}
+                source={require("../../common/assets/images/artist/russ.png")}
+              />
+              <Text style={{ color: "white", fontSize: 12 }}>
+                Russ
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Artist5")}
+          >
+            <View style={{ alignItems: "center", marginRight: 18 }}>
+              <Image
+                style={{
+                  height: 60,
+                  width: 60,
+                  borderRadius: 30,
+                  borderColor: "white",
+                  borderWidth: 1,
+                  marginBottom: 5,
+                }}
+                source={require("../../common/assets/images/artist/djSplice.png")}
+              />
+              <Text style={{ color: "white", fontSize: 12 }}>
+                DJ Splice
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Artist6")}
+          >
+            <View style={{ alignItems: "center", marginRight: 18 }}>
+              <Image
+                style={{
+                  height: 60,
+                  width: 60,
+                  borderRadius: 30,
+                  borderColor: "white",
+                  borderWidth: 1,
+                  marginBottom: 5,
+                }}
+                source={require("../../common/assets/images/artist/marshaBrady.png")}
+              />
+              <Text style={{ color: "white", fontSize: 12 }}>
+                Marsha Brady
+              </Text>
+            </View>
+          </TouchableOpacity>
         </ScrollView>
         {/* top tranding Artist start  */}
         <View
@@ -196,68 +247,26 @@ export const HomeScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
-        {/* <VStack space="2" mt="4" px="3">
-          <Stack
-            justifyContent="space-between"
-            direction="row"
-            mb="2.5"
-            mt="1.5"
-            space={4}
-          >
-            <HStack>
-              <TouchableOpacity
-                onPress={() => alert("ok")}
-              >
-                <Image
-                  source={require("../../common/assets/images/home/artist1.png")}
-                />
+        <View style={{ marginVertical: 20 }} >
+          <Text style={{ fontSize: 20, fontWeight: "700", color: "#FFF", marginBottom: 20 }} >Trending Artists News</Text>
+          <ScrollView style={{ marginLeft: 15 }} horizontal={true}>
+            {[1, 2, 3].map((d, i) => (
+              <TouchableOpacity key={i} onPress={() => alert('ok')} >
+                <ImageBackground style={{ height: 194, borderRadius: 10, width: 326, justifyContent: "space-between", padding: 20, marginRight: 15 }} source={require('../../common/assets/images/home/trandingNews.png')} >
+                  <Text style={{ fontSize: 18, fontWeight: "700", color: "#FFF" }} >Russs new concert</Text>
+                  <Text style={{ fontSize: 16, color: "#FFF" }} >Lorem ipsum dolor sit amet,consectetur adipiscing elit. Porta eleme ntum fames...</Text>
+                  <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
+                    <Text style={{ color: "#FFF" }} >Sep 21, 2012</Text>
+                    <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: "rgba(54, 54, 54, 0.63)", padding: 10, borderRadius: 10 }} >
+                      <Feather name="eye" size={18} color="#FFF" />
+                      <Text style={{ color: "#FFF", fontSize: 12 }} >30k</Text>
+                    </View>
+                  </View>
+                </ImageBackground>
               </TouchableOpacity>
-            </HStack>
-            <HStack>
-              <Image
-                source={require("../../common/assets/images/home/artist2.png")}
-              />
-            </HStack>
-          </Stack>
-          <Stack
-            justifyContent="space-between"
-            direction="row"
-            mb="2.5"
-            mt="1.5"
-            space={4}
-          >
-            <HStack>
-              <Image
-                source={require("../../common/assets/images/home/artist3.png")}
-              />
-            </HStack>
-            <HStack>
-              <Image
-                source={require("../../common/assets/images/home/artist4.png")}
-              />
-            </HStack>
-          </Stack>
-          <Stack
-            justifyContent="space-between"
-            direction="row"
-            mb="2.5"
-            mt="1.5"
-            space={4}
-          >
-            <HStack>
-              <Image
-                source={require("../../common/assets/images/home/artist5.png")}
-              />
-            </HStack>
-            <HStack>
-              <Image
-                source={require("../../common/assets/images/home/artist6.png")}
-              />
-            </HStack>
-          </Stack>
-        </VStack> */}
-
-        {/* top tranding artist end  */}
+            ))}
+          </ScrollView>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

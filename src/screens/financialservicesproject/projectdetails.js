@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, SafeAreaView, ImageBackground, Platform, Image, ScrollView,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, ImageBackground, Platform, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Slider } from 'native-base';
 import { Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { RankingTab } from '../../common/components'; 
+import { RankingTab } from '../../common/components';
 
 export const ProjectDetails = ({ navigation }) => {
     const [onChangeValue, setOnChangeValue] = React.useState(50);
@@ -30,7 +30,7 @@ export const ProjectDetails = ({ navigation }) => {
                             <Text style={{ color: '#E0E0E0', fontSize: 12 }}>60 days left</Text>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={()=> navigation.navigate('FinancialServicesNft')} >
+                    <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesNft')} >
                         <View style={{ borderColor: "#B8B8B8", borderWidth: 1, paddingVertical: Platform.OS === "ios" ? 15 : 10, borderRadius: 5, marginTop: 20 }} >
                             <Text style={{ color: "#fff", textAlign: "center" }} >Invest Now</Text>
                         </View>
@@ -188,14 +188,13 @@ export const ProjectDetails = ({ navigation }) => {
                         </View> */}
                     </View>
                 </View>
-                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 15, backgroundColor: "#2C2C2C", paddingVertical: 15 }} >
+                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 15, backgroundColor: "#2C2C2C", paddingVertical: 15, marginBottom: 50 }} >
                     <View style={{ flexDirection: "row", alignItems: "center" }} >
                         <View style={{ height: 32, width: 16, borderRadius: 5, backgroundColor: "#4051DF" }} />
                         <Text style={{ color: "#E0E0E0", fontSize: 18, fontWeight: "bold", marginLeft: 15 }} >Total Raise</Text>
                     </View>
                     <Text style={{ color: "#FCFCFC", fontSize: 18, fontWeight: "bold" }} >$1,250,000</Text>
                 </View>
-                <Text>ProjectDetails</Text>
             </ScrollView>
         </SafeAreaView>
     )

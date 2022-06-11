@@ -9,15 +9,17 @@ import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
 
 import UserContext from "../../context/auth";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export const CustomDrawerContent = ({ navigation }) => {
   const [accorOpen, setAccorOpen] = useState(false);
+  const [aboutUpOpen, setAboutOpen] = useState(false);
 
   const { user, setUser } = useContext(UserContext);
 
   return (
     <SafeAreaView>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <VStack style={{ marginTop: Constants.statusBarHeight }}>
         <HStack justifyContent="space-between" alignItems={"center"}>
           <Text style={{ fontSize: 16, color: "#FFFFFF" }}>Menu</Text>
@@ -27,7 +29,7 @@ export const CustomDrawerContent = ({ navigation }) => {
         </HStack>
         <Divider style={{ marginTop: 8 }} />
         <VStack style={{ marginTop: 24 }}>
-          <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
+          {/* <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("AboutUsStartDrawer")}
               variant="unstyled"
@@ -39,10 +41,94 @@ export const CustomDrawerContent = ({ navigation }) => {
                 </Text>
               </HStack>
             </TouchableOpacity>
-          </HStack>
-          <TouchableOpacity onPress={() => setAccorOpen((prev) => !prev)}>
+          </HStack> */}
+          <TouchableOpacity onPress={() => setAboutOpen((prev) => !prev)}>
             <HStack alignItems={"center"}>
-              <Ionicons name="home-outline" size={21} color="#FFFFFF" />
+              <Ionicons name="book-outline" size={21} color="#FFFFFF" />
+              <HStack
+                justifyContent="space-between"
+                alignItems={"center"}
+                style={{ marginLeft: 8, flex: 1 }}
+              >
+                <Text style={{ fontSize: 16, color: "#FFFFFF" }}>About Us</Text>
+                {!aboutUpOpen && (
+                  <Icon
+                    as={<Ionicons name="chevron-down-outline" />}
+                    size={5}
+                    color="#6F767E"
+                  />
+                )}
+                {aboutUpOpen && (
+                  <Icon
+                    as={<Ionicons name="chevron-up-outline" />}
+                    size={5}
+                    color="#6F767E"
+                  />
+                )}
+              </HStack>
+            </HStack>
+          </TouchableOpacity>
+          {aboutUpOpen && (
+            <View>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ScoutStartDrawer")}
+              >
+                <HStack
+                  alignItems={"center"}
+                  style={{ marginBottom: 15, marginLeft: 22, marginTop: 15 }}
+                >
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Mission & Ethos{" "}
+                    </Text>
+                  </HStack>
+                </HStack>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ArtrepreneurStartDrawer")}
+              >
+                <HStack
+                  alignItems={"center"}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
+                >
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - How It Works{" "}
+                    </Text>
+                  </HStack>
+                </HStack>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ArtrepreneurStartDrawer")}
+              >
+                <HStack
+                  alignItems={"center"}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
+                >
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Management {" "}
+                    </Text>
+                  </HStack>
+                </HStack>
+              </TouchableOpacity>
+            </View>
+          )}
+          <TouchableOpacity onPress={() => setAccorOpen((prev) => !prev)}>
+            <HStack style={{ marginTop: 32 }} alignItems={"center"}>
+              <MaterialIcons name="electrical-services" size={21} color="#FFF" />
               <HStack
                 justifyContent="space-between"
                 alignItems={"center"}
@@ -82,7 +168,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                     style={{ marginLeft: 8, flex: 1 }}
                   >
                     <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                      Digital Talent Scouting{" "}
+                      - Digital Talent Scouting{" "}
                     </Text>
                   </HStack>
                 </HStack>
@@ -100,29 +186,11 @@ export const CustomDrawerContent = ({ navigation }) => {
                     style={{ marginLeft: 8, flex: 1 }}
                   >
                     <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                      Artrepreneur Rep{" "}
+                      - Artrepreneurship & Portal{" "}
                     </Text>
                   </HStack>
                 </HStack>
               </TouchableOpacity>
-              {/* <TouchableOpacity
-                onPress={() => navigation.navigate("FanTankNftMarketplace")}
-              >
-                <HStack
-                  alignItems={"center"}
-                  style={{ marginBottom: 15, marginLeft: 22 }}
-                >
-                  <HStack
-                    justifyContent="space-between"
-                    alignItems={"center"}
-                    style={{ marginLeft: 8, flex: 1 }}
-                  >
-                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                      FanTank NFT Marketplace
-                    </Text>
-                  </HStack>
-                </HStack>
-              </TouchableOpacity> */}
 
               <HStack
                 alignItems={"center"}
@@ -134,7 +202,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                   style={{ marginLeft: 8, flex: 1 }}
                 >
                   <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    Information Technology{" "}
+                    - Information Technology{" "}
                   </Text>
                   <Icon
                     as={<Ionicons name="add-circle-outline" />}
@@ -143,21 +211,24 @@ export const CustomDrawerContent = ({ navigation }) => {
                   />
                 </HStack>
               </HStack>
-              <HStack
-                alignItems={"center"}
-                style={{ marginBottom: 15, marginLeft: 22 }}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate('Fanbit')} >
                 <HStack
-                  justifyContent="space-between"
                   alignItems={"center"}
-                  style={{ marginLeft: 8, flex: 1 }}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
                 >
-                  <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    FanBit Utility Token{" "}
-                  </Text>
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - FanBit Token{" "}
+                    </Text>
+                  </HStack>
+
                 </HStack>
-              </HStack>
-              <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjectListings')} >
+              </TouchableOpacity>
+              {/* <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjectListings')} >
                 <HStack
                   alignItems={"center"}
                   style={{ marginBottom: 15, marginLeft: 22 }}
@@ -172,6 +243,22 @@ export const CustomDrawerContent = ({ navigation }) => {
                     </Text>
                   </HStack>
                 </HStack>
+              </TouchableOpacity> */}
+              <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjectListings')} >
+                <HStack
+                  alignItems={"center"}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
+                >
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Finance Marketplace{" "}
+                    </Text>
+                  </HStack>
+                </HStack>
               </TouchableOpacity>
 
               <HStack
@@ -184,7 +271,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                   style={{ marginLeft: 8, flex: 1 }}
                 >
                   <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    Event Curation{" "}
+                    - Showcases & Events{" "}
                   </Text>
                 </HStack>
               </HStack>
@@ -195,7 +282,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                   style={{ marginLeft: 8, flex: 1 }}
                 >
                   <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    Search & Explore{" "}
+                    - Search & Explore{" "}
                   </Text>
                 </HStack>
               </HStack>
@@ -204,25 +291,36 @@ export const CustomDrawerContent = ({ navigation }) => {
 
           <HStack
             alignItems={"center"}
-            style={{ marginBottom: 32, marginTop: 32 }}
+            style={{ marginTop: 32 }}
           >
             <Ionicons name="cog-outline" size={21} color="#FFFFFF" />
             <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
               Settings/Notifications
             </Text>
           </HStack>
-          <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
-            <Ionicons name="call-outline" size={21} color="#FFFFFF" />
+          <HStack
+            alignItems={"center"}
+            style={{ marginBottom: 32, marginTop: 32 }}
+          >
+            <MaterialCommunityIcons name="stairs-up" size={21} color="#FFF" />
             <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
-              Contact Us
+              Careers
             </Text>
           </HStack>
-          <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('ContactUsContainer')} >
+            <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
+              <Ionicons name="call-outline" size={21} color="#FFFFFF" />
+              <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
+                Contact Us
+              </Text>
+            </HStack>
+          </TouchableOpacity>
+          {/* <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
             <Ionicons name="bookmarks-outline" size={21} color="#FFFFFF" />
             <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
               SiteMap
             </Text>
-          </HStack>
+          </HStack> */}
           {user !== null && (
             <HStack
               alignItems={"center"}
