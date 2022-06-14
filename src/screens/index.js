@@ -15,4 +15,6 @@ export * from "./financialservicesproject";
 export * from "./artist3";
 export * from "./contactus";
 export * from "./scouting";
+export * from "./notification";
+export * from "./careers";
 

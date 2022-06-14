@@ -76,6 +76,7 @@ export const HomeRoutesContainer = () => {
         component={SearchStartContainer}
         options={{ headerShown: false }}
       />
+      
     </Stack.Navigator>
   );
 };

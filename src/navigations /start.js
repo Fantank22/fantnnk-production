@@ -9,6 +9,8 @@ import { FanTankNftMarketplace } from "./fantanknftmarketplace";
 import { FinancialServicesProjectListings } from "./financialservicesprojectlistings/start";
 import { ContactUsContainer } from "./contactus";
 import { Fanbit } from "../screens";
+import { NotificationStartContainer } from "./notification";
+import { CareersStartContainer } from "./Careers/start";
 
 const Stack = createNativeStackNavigator();
 
@@ -37,11 +39,11 @@ export const StartApp = () => {
         component={FanTankNftMarketplace}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen
-        name="FinancialServicesProjectListings"
-        component={FinancialServicesProjectListings}
+      <Stack.Screen
+        name="NotificationStartContainer"
+        component={NotificationStartContainer}
         options={{ headerShown: false }}
-      /> */}
+      />
       <Stack.Screen
         name="ContactUsContainer"
         component={ContactUsContainer}
@@ -50,6 +52,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="Fanbit"
         component={Fanbit}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CareersStartContainer"
+        component={CareersStartContainer}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
