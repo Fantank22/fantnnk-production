@@ -298,15 +298,17 @@ export const CustomDrawerContent = ({ navigation }) => {
               Settings/Notifications
             </Text>
           </HStack>
-          <HStack
-            alignItems={"center"}
-            style={{ marginBottom: 32, marginTop: 32 }}
-          >
-            <MaterialCommunityIcons name="stairs-up" size={21} color="#FFF" />
-            <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
-              Careers
-            </Text>
-          </HStack>
+          <TouchableOpacity onPress={() => navigation.navigate('CareersStartContainer')} >
+            <HStack
+              alignItems={"center"}
+              style={{ marginBottom: 32, marginTop: 32 }}
+            >
+              <MaterialCommunityIcons name="stairs-up" size={21} color="#FFF" />
+              <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
+                Careers
+              </Text>
+            </HStack>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('ContactUsContainer')} >
             <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
               <Ionicons name="call-outline" size={21} color="#FFFFFF" />

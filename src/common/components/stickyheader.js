@@ -94,12 +94,14 @@ export const StickyHeader = ({ navigation }) => {
           </>
         )}
 
-        <Ionicons
-          name="notifications-outline"
-          size={20}
-          style={{ width: 20, height: 20 }}
-          color="#fff"
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('NotificationStartContainer')} >
+          <Ionicons
+            name="notifications-outline"
+            size={20}
+            style={{ width: 20, height: 20 }}
+            color="#fff"
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
