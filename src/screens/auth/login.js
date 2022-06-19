@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   Platform,
+  ImageBackground
 } from "react-native";
 import { FormControl, Input, Button } from "native-base";
 
@@ -109,80 +110,90 @@ export const LoginScreen = ({ navigation }) => {
       <StatusBar style="light" />
       <MyKeyboardAvoidingView>
         <ScrollView>
-          <View style={{ padding: 20, flex: 1 }}>
-            <View
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: Platform.OS === "ios" ? 100 : 50,
-              }}
-            >
-              <Image
-                source={require("../../common/assets/images/logo-text.png")}
-              />
-            </View>
-            <Text style={styles.screenTitle}>Login</Text>
-
-            <SocianBtn
-              iconName="facebook-f"
-              backGrounColor="#378EF0"
-              iconColor="white"
-              name="Facebook"
-              onPress={faceBook}
-            />
-            <SocianBtn
-              iconName="logo-google"
-              backGrounColor="#378EF0"
-              iconColor="white"
-              name="Google"
-            />
-            <SocianBtn
-              iconName="logo-apple"
-              backGrounColor="white"
-              iconColor="black"
-              name="Apple"
-            />
-            <Divider tip="OR" />
-
-            <FormControl isInvalid={form.email.error} w="100%" mb={4}>
-              <Input
-                placeholder="Enter Email"
-                height={50}
-                onChangeText={(value) => inputHandle("email", value, setForm)}
-                type="email"
-                color={"#fff"}
-              />
-              <FormControl.ErrorMessage>
-                Try different from previous passwords.
-              </FormControl.ErrorMessage>
-            </FormControl>
-
-            <FormControl isInvalid={form.password.error} w="100%" mb={4}>
-              <Input
-                placeholder="Enter password"
-                height={50}
-                onChangeText={(value) =>
-                  inputHandle("password", value, setForm)
-                }
-                type="password"
-                color={"#fff"}
-              />
-              <FormControl.ErrorMessage>
-                Try different from previous passwords.
-              </FormControl.ErrorMessage>
-            </FormControl>
-            <View style={styles.forgetTextArea}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("ForgetPassword")}
+          <View style={{ flex: 1 }}>
+            <ImageBackground source={require('../../common/assets/images/login/background.png')} style={{ height: 500, padding: 20 }} >
+              <View
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginTop: Platform.OS === "ios" ? 100 : 50,
+                }}
               >
-                <Text style={styles.forgetText}>Forgot Password ?</Text>
-              </TouchableOpacity>
+                <Image
+                  source={require("../../common/assets/images/logo-text.png")}
+                />
+              </View>
+              <Text style={[styles.screenTitle, { marginTop: 30 }]}>Welcome back! Enter email and password to sign in.</Text>
+              <Text style={[styles.screenTitle, { marginBottom: 30 }]}>Enter email and password to sign in.</Text>
+
+
+
+
+              <FormControl isInvalid={form.email.error} w="100%" mb={4}>
+                <Input
+                  placeholder="Enter Email"
+                  height={50}
+                  onChangeText={(value) => inputHandle("email", value, setForm)}
+                  type="email"
+                  color={"#fff"}
+                />
+                <FormControl.ErrorMessage>
+                  Try different from previous passwords.
+                </FormControl.ErrorMessage>
+              </FormControl>
+
+              <FormControl isInvalid={form.password.error} w="100%" mb={4}>
+                <Input
+                  placeholder="Enter password"
+                  height={50}
+                  onChangeText={(value) =>
+                    inputHandle("password", value, setForm)
+                  }
+                  type="password"
+                  color={"#fff"}
+                />
+                <FormControl.ErrorMessage>
+                  Try different from previous passwords.
+                </FormControl.ErrorMessage>
+              </FormControl>
+              <View style={styles.forgetTextArea}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("ForgetPassword")}
+                >
+                  <Text style={styles.forgetText}>Forgot Password ?</Text>
+                </TouchableOpacity>
+              </View>
+
+              <Button colorScheme="primary" onPress={loginHandle}>
+                Sign In
+              </Button>
+            </ImageBackground>
+            <View style={{ marginTop: 20,padding:20 }} >
+              <Divider tip="OR" />
+              <SocianBtn
+                iconName="facebook-f"
+                backGrounColor="#378EF0"
+                iconColor="white"
+                name="Facebook"
+                onPress={faceBook}
+              />
+              <SocianBtn
+                iconName="logo-google"
+                backGrounColor="#378EF0"
+                iconColor="white"
+                name="Google"
+              />
+              <SocianBtn
+                iconName="logo-apple"
+                backGrounColor="white"
+                iconColor="black"
+                name="Apple"
+              />
+
             </View>
 
-            <Button colorScheme="primary" onPress={loginHandle}>
-              Login
-            </Button>
+
 
             <View style={styles.skipLogin}>
               <TouchableOpacity onPress={() => navigation.navigate("Home")}>
@@ -198,14 +209,14 @@ export const LoginScreen = ({ navigation }) => {
           </View>
         </ScrollView>
       </MyKeyboardAvoidingView>
-      <Image
+      {/* <Image
         source={require("../../common/assets/images/1.png")}
         style={styles.bgImage1}
       />
       <Image
         source={require("../../common/assets/images/2.png")}
         style={styles.bgImage2}
-      />
+      /> */}
     </View>
   );
 };
@@ -218,10 +229,8 @@ const styles = StyleSheet.create({
 
   screenTitle: {
     color: "#fff",
-    fontSize: 32,
-    fontWeight: "700",
-    marginBottom: 30,
-    marginTop: 20,
+    fontSize: 17,
+    fontWeight: "200",
     textAlign: "center",
   },
 
