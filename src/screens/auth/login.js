@@ -137,6 +137,7 @@ export const LoginScreen = ({ navigation }) => {
                   onChangeText={(value) => inputHandle("email", value, setForm)}
                   type="email"
                   color={"#fff"}
+                  value={'prince@gmailsds.com'}
                 />
                 <FormControl.ErrorMessage>
                   Try different from previous passwords.
@@ -152,6 +153,7 @@ export const LoginScreen = ({ navigation }) => {
                   }
                   type="password"
                   color={"#fff"}
+                  value={'prince'}
                 />
                 <FormControl.ErrorMessage>
                   Try different from previous passwords.
