@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FinancialServices,MainFantankMarketplace,SingleNFT ,Favourites,ConnectWallet} from "../../screens";
+import { FinancialServices, MainFantankMarketplace, SingleNFT, Favourites, ConnectWallet } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 

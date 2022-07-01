@@ -5,12 +5,13 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 
 import { Stack, HStack, Button, VStack } from "native-base";
 
 import { Ionicons } from "@expo/vector-icons";
-import { CustomCheckBox } from "../../../common";
+import { Buttons, CustomCheckBox } from "../../../common";
 
 export const StepFour = ({ navigation, setActiveStep, form, setForm }) => {
   return (
@@ -46,9 +47,9 @@ export const StepFour = ({ navigation, setActiveStep, form, setForm }) => {
               <Text style={styles.screenSubTitle}>(Select 1)</Text>
             </VStack>
 
-            <Button onPress={() => setActiveStep(5)} variant={"unstyled"}>
-              Skip
-            </Button>
+            <TouchableOpacity onPress={() => setActiveStep(5)}>
+              <Text style={{ color: "#A19A9A", fontSize: 16 }} >Skip</Text>
+            </TouchableOpacity>
           </HStack>
 
           <Stack
@@ -190,9 +191,7 @@ export const StepFour = ({ navigation, setActiveStep, form, setForm }) => {
                 />
               </HStack>
             </Stack>
-            <Button w={"full"} h={12} onPress={() => setActiveStep(5)}>
-              Next
-            </Button>
+            <Buttons onPress={() => setActiveStep(5)} title={'Next'} fillBtn={true} style={{ width: "100%" }} />
             <Button w={"full"} h={12} variant="outline">
               Cancel
             </Button>

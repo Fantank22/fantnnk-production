@@ -5,16 +5,17 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 
 import { Stack, HStack, Button, VStack } from "native-base";
 
 import { Ionicons } from "@expo/vector-icons";
 
-import { MultiCheckBox } from "../../../common";
+import { Buttons, MultiCheckBox } from "../../../common";
 
 export const StepThree = ({ navigation, setActiveStep, form, setForm }) => {
-  const genres = ["Country", "Hip Hop", "Pop", "Heavy Metal", "Opera"];
+  const genres = ["Country", "Hip Hop", "Pop", "Heavy Metal", "Opera","Rock","R&B / Soul","Reggae /  Caribbean","Electronic / Dance",'Gospel /Spiritual'];
 
   const checkBoxes = [];
 
@@ -90,9 +91,9 @@ export const StepThree = ({ navigation, setActiveStep, form, setForm }) => {
               <Text style={styles.screenSubTitle}>(Pick up 3)</Text>
             </VStack>
 
-            <Button onPress={() => setActiveStep(4)} variant={"unstyled"}>
-              Skip
-            </Button>
+            <TouchableOpacity onPress={() => setActiveStep(4)}>
+              <Text style={{ color:"#A19A9A",fontSize:16 }} >Skip</Text>
+            </TouchableOpacity> 
           </HStack>
           <Stack
             space={4}
@@ -100,10 +101,8 @@ export const StepThree = ({ navigation, setActiveStep, form, setForm }) => {
             alignItems="center"
             style={{ paddingHorizontal: 15, marginBottom: 40 }}
           >
-            {checkBoxes}
-            <Button w={"full"} h={12} onPress={() => setActiveStep(4)}>
-              Next
-            </Button>
+            {checkBoxes} 
+            <Buttons onPress={() => setActiveStep(4)} title={'Next'} fillBtn={true} style={{ width: "100%" }} />
           </Stack>
         </View>
       </ScrollView>

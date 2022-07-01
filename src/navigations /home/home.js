@@ -6,7 +6,6 @@ import { ArtistThreeStartContainer } from "../artist3/start";
 import { ArtistFourStartContainer } from "../artist4";
 import { ArtistFiveStartContainer } from "../artist5/start";
 import { ArtistSixStartContainer } from "../artist6/start";
-import { SearchStartContainer } from "../search";
 import { TopTrendingArtists } from "./topartist";
 import { TopTrendingScouts } from "./topscouts";
 
@@ -71,12 +70,7 @@ export const HomeRoutesContainer = () => {
         component={ArtistSixStartContainer}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="SearchHome"
-        component={SearchStartContainer}
-        options={{ headerShown: false }}
-      />
-      
+
     </Stack.Navigator>
   );
 };

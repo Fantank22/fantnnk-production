@@ -6,7 +6,8 @@ import {
   Button,
   TouchableNativeFeedback,
   TouchableOpacity,
-  Platform
+  Platform,
+  ScrollView
 } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
@@ -26,93 +27,85 @@ export const ArtistPageSendFanbitScreenOne = ({ navigation }) => {
       <StatusBar hidden />
       <ArtistMoreHeader navigation={navigation} destination={"artistMore"} />
 
-      <View>
-        <Text style={styles.title}>Transfer FanBit {"\n"} to Rate Talent</Text>
-        <Image
-          style={styles.fitbitToken}
-          source={require("../../common/assets/images/artistlist/fitbit-token.png")}
-        />
-      </View>
-      <Text style={styles.sendTo}>Send To</Text>
-      <View style={styles.sendButtoncontainer}>
-        <TouchableNativeFeedback>
-          <Text style={styles.artistBtn}>Artist</Text>
-        </TouchableNativeFeedback>
-        <TouchableNativeFeedback>
-          <Text style={styles.Influential}>Influential</Text>
-        </TouchableNativeFeedback>
-      </View>
-      <View>
-        <Text style={styles.sendTo}>FanBit Amount</Text>
-        <Stack space={4} style={{ position: "relative", marginTop: 20 }}>
-          <Text
-            style={{
-              color: "white",
-              position: "absolute",
-              left: Platform.OS === 'ios' ? onChangeValue * 2.8 : onChangeValue * 2.4,
-              top: -5
-            }}
-            textAlign="center"
-          >
-            {onChangeValue}%
-          </Text>
-          <Slider
-            width="80%"
-            size="lg"
-            defaultValue={70}
-            colorScheme="green"
-            onChange={(v) => {
-              setOnChangeValue(Math.floor(v));
-            }}
-            onChangeEnd={(v) => {
-              v && setOnChangeEndValue(Math.floor(v));
-            }}
-          >
-            <Slider.Track bg="green.100">
-              <Slider.FilledTrack bg="blue.400" />
-            </Slider.Track>
-            <Slider.Thumb>
-              <View style={{ backgroundColor: "#49C3EB", height: 24, width: 24, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <FontAwesome5 name="check-circle" size={18} color="white" />
-              </View>
-            </Slider.Thumb>
-          </Slider>
-          <View
-            style={{
-              position: "absolute",
-              right: 0,
-              top: 14,
-              backgroundColor: "#2D6A7E",
-              paddingHorizontal: 5,
-              paddingVertical: 3,
-              borderRadius: 3,
-              fontSize: 12,
-              fontWeight: "bold",
-            }}
-          >
-            <Text style={{ color: "white" }} >{onChangeValue * 40}</Text>
-          </View>
-        </Stack>
-        <View style={{ flexDirection: "row" }}>
-          {amount.map((i) => (
-            <Text key={i} style={{ color: "white", marginRight: Platform.OS === 'ios' ? 14 : 8 }}> {i} </Text>
-          ))}
+      <ScrollView>
+        <View>
+          <Text style={styles.title}>Transfer FanBit {"\n"} to Rate Talent</Text>
+          <Image
+            style={styles.fitbitToken}
+            source={require("../../common/assets/images/artistlist/fitbit-token.png")}
+          />
         </View>
-      </View>
-      <View style={styles.buttonGroup}>
-        <TouchableOpacity
-          style={styles.buttons}
-          onPress={() => navigation.navigate("SendFanBitTwo")}
-        >
-          <Buttons title={"Send FanBit"} fillBtn={true} />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.buttons}
-          onPress={() => navigation.goBack()}
-        >
-          <Buttons title={"Cancel"} outline={true} />
-        </TouchableOpacity>
-      </View>
+        <Text style={styles.sendTo}>Send To</Text>
+        <View style={styles.sendButtoncontainer}>
+          <TouchableNativeFeedback>
+            <Text style={styles.artistBtn}>Artist</Text>
+          </TouchableNativeFeedback>
+          <TouchableNativeFeedback>
+            <Text style={styles.Influential}>Influential</Text>
+          </TouchableNativeFeedback>
+        </View>
+        <View>
+          <Text style={styles.sendTo}>FanBit Amount</Text>
+          <Stack space={4} style={{ position: "relative", marginTop: 20 }}>
+            <Text
+              style={{
+                color: "white",
+                position: "absolute",
+                left: Platform.OS === 'ios' ? onChangeValue * 2.8 : onChangeValue * 2.4,
+                top: -5
+              }}
+              textAlign="center"
+            >
+              {onChangeValue}%
+            </Text>
+            <Slider
+              width="80%"
+              size="lg"
+              defaultValue={70}
+              colorScheme="green"
+              onChange={(v) => {
+                setOnChangeValue(Math.floor(v));
+              }}
+              onChangeEnd={(v) => {
+                v && setOnChangeEndValue(Math.floor(v));
+              }}
+            >
+              <Slider.Track bg="green.100">
+                <Slider.FilledTrack bg="blue.400" />
+              </Slider.Track>
+              <Slider.Thumb>
+                <View style={{ backgroundColor: "#49C3EB", height: 24, width: 24, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <FontAwesome5 name="check-circle" size={18} color="white" />
+                </View>
+              </Slider.Thumb>
+            </Slider>
+            <View
+              style={{
+                position: "absolute",
+                right: 0,
+                top: 14,
+                backgroundColor: "#2D6A7E",
+                paddingHorizontal: 5,
+                paddingVertical: 3,
+                borderRadius: 3,
+                fontSize: 12,
+                fontWeight: "bold",
+              }}
+            >
+              <Text style={{ color: "white" }} >{onChangeValue * 40}</Text>
+            </View>
+          </Stack>
+          <View style={{ flexDirection: "row" }}>
+            {amount.map((i) => (
+              <Text key={i} style={{ color: "white", marginRight: Platform.OS === 'ios' ? 14 : 8 }}> {i} </Text>
+            ))}
+          </View>
+        </View>
+        <View style={styles.buttonGroup}>
+          <Buttons onPress={() => navigation.navigate("SendFanBitTwo")} title={"Send FanBit"} fillBtn={true} />
+          <Buttons onPress={() => navigation.goBack()} title={"Cancel"} outLine={true} />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -165,10 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     marginTop: 15,
   },
-  buttons: {
-    marginBottom: 15,
-  },
   buttonGroup: {
-    marginTop: 100,
+    marginTop: 80,
   },
 });

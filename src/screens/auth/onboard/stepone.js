@@ -5,6 +5,7 @@ import {
   ScrollView,
   Platform,
   Text as NText,
+  SafeAreaView,
 } from "react-native";
 
 import {
@@ -20,11 +21,30 @@ import {
   Text,
 } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
-
-import { MyKeyboardAvoidingView } from "../../../common";
+import CountryPicker from 'react-native-country-picker-modal'
+import { Buttons, MyKeyboardAvoidingView } from "../../../common";
+import { AntDesign } from '@expo/vector-icons';
 
 export const StepOne = ({ navigation, setActiveStep, form }) => {
+
   const toast = useToast();
+  const [countryCode, setCountryCode] = useState('US')
+  const [country, setCountry] = useState(null)
+  const [withCountryNameButton, setWithCountryNameButton] = useState(
+    false,
+  )
+  const [withFlag, setWithFlag] = useState(true)
+  const [withEmoji, setWithEmoji] = useState(true)
+  const [withFilter, setWithFilter] = useState(true)
+  const [withAlphaFilter, setWithAlphaFilter] = useState(false)
+  const [withCallingCode, setWithCallingCode] = useState(false)
+
+
+
+  const onSelect = (country) => {
+    setCountryCode(country.cca2)
+    setCountry(country)
+  }
 
   let [service, setService] = useState("");
 
@@ -43,9 +63,11 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
   };
 
   return (
-    <MyKeyboardAvoidingView>
+    <SafeAreaView>
       <ScrollView>
-        <View>
+
+
+        <View style={{ paddingBottom:20 }} >
           <HStack
             alignItems={"center"}
             justifyContent={"center"}
@@ -58,12 +80,16 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
             <NText style={styles.screenTitle}>{"Basic Info"}</NText>
           </HStack>
 
+
           <Stack
             space={4}
             w="100%"
             alignItems="center"
             style={{ paddingHorizontal: 15, marginBottom: 40 }}
           >
+
+
+
             <FormControl>
               <FormControl.Label>Name</FormControl.Label>
               <Input
@@ -131,10 +157,13 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
             </FormControl>
 
             <FormControl>
-              <FormControl.Label>Address</FormControl.Label>
+              <HStack space={3} justifyContent="flex-start">
+                <FormControl.Label>Address</FormControl.Label>
+                <AntDesign name="edit" size={24} color="#333333" />
+              </HStack>
               <HStack space={3} justifyContent="space-between" w="100%">
                 <Stack flex={1}>
-                  <Input
+                  {/* <Input
                     h={12}
                     w="auto"
                     variant="Filled"
@@ -149,7 +178,24 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
                       />
                     }
                     placeholder="USA"
-                  />
+                  /> */}
+                  <View style={{ flex: 1, flexDirection: "row", alignItems: "center", backgroundColor: "#333", borderRadius: 5, paddingLeft: 10 }}>
+                    <CountryPicker
+                      {...{
+                        countryCode,
+                        withFilter,
+                        withFlag,
+                        withCountryNameButton,
+                        withAlphaFilter,
+                        withCallingCode,
+                        withEmoji,
+                        onSelect,
+                      }}
+                      visible={false}
+                    />
+                    <Text style={{ color: "#fff" }}>{!country?.name ? "Usa" : country?.name}</Text>
+
+                  </View>
                 </Stack>
                 <Stack flex={1}>
                   <Input
@@ -356,13 +402,14 @@ export const StepOne = ({ navigation, setActiveStep, form }) => {
                 <Select.Item key={2} label="Web Development" value="web" />
               </Select>
             </FormControl>
-            <Button w={"full"} h={12} onPress={handleSubmit}>
-              Next
-            </Button>
+
+
+            <Buttons style={{ width:"100%" }} onPress={handleSubmit} title={" Next"} fillBtn={true} />
           </Stack>
         </View>
       </ScrollView>
-    </MyKeyboardAvoidingView>
+
+    </SafeAreaView>
   );
 };
 

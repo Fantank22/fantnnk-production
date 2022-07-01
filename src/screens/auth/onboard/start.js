@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Image, SafeAreaView, StyleSheet, StatusBar } from "react-native";
+import { Image, Platform, SafeAreaView, StyleSheet } from "react-native";
 import { TabHeader } from "./components/header";
 import { StepOne } from "./stepone";
 import { StepTwo } from "./steptwo";
 import { StepThree } from "./stepthree";
 import { StepFour } from "./setpfour";
 import { StepFive } from "./stepfive";
+import { StatusBar } from "expo-status-bar";
 
 export const OnboardStartScreen = ({ navigation }) => {
   const [activeStep, setActiveStep] = useState(1);
@@ -36,15 +37,10 @@ export const OnboardStartScreen = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: "#0B0B0B",
+        paddingTop:Platform.OS === 'ios'?0:35
       }}
     >
-      <StatusBar
-        animated={true}
-        backgroundColor="#1A1A1A"
-        barStyle={"dark-content"}
-        showHideTransition={true}
-        hidden={true}
-      />
+      <StatusBar style="light" />
 
       <TabHeader activeStep={activeStep} setActiveStep={setActiveStep} />
       {activeStep === 1 ? (
@@ -86,7 +82,7 @@ const styles = StyleSheet.create({
     height: 300,
     width: 200,
     position: "absolute",
-    top: 0,
+    top: 50,
     right: 0,
     zIndex: -1000,
   },

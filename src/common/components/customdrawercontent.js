@@ -244,7 +244,7 @@ export const CustomDrawerContent = ({ navigation }) => {
                   </HStack>
                 </HStack>
               </TouchableOpacity> */}
-              <TouchableOpacity onPress={() => navigation.navigate('FinancialServicesProjectListings')} >
+              <TouchableOpacity onPress={() => navigation.navigate('FanTankNftMarketplace')} >
                 <HStack
                   alignItems={"center"}
                   style={{ marginBottom: 15, marginLeft: 22 }}
@@ -275,17 +275,22 @@ export const CustomDrawerContent = ({ navigation }) => {
                   </Text>
                 </HStack>
               </HStack>
-              <HStack alignItems={"center"} style={{ marginLeft: 22 }}>
-                <HStack
-                  justifyContent="space-between"
-                  alignItems={"center"}
-                  style={{ marginLeft: 8, flex: 1 }}
-                >
-                  <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    - Search & Explore{" "}
-                  </Text>
+
+
+              <TouchableOpacity onPress={() => navigation.navigate('SearchStartContainer')} >
+                <HStack alignItems={"center"} style={{ marginLeft: 22 }}>
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Search & Explore{" "}
+                    </Text>
+                  </HStack>
                 </HStack>
-              </HStack>
+              </TouchableOpacity>
+
             </View>
           )}
 
@@ -314,6 +319,14 @@ export const CustomDrawerContent = ({ navigation }) => {
               <Ionicons name="call-outline" size={21} color="#FFFFFF" />
               <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
                 Contact Us
+              </Text>
+            </HStack>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('ServiceContainer')} >
+            <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
+              <Ionicons name="call-outline" size={21} color="#FFFFFF" />
+              <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
+                Service2
               </Text>
             </HStack>
           </TouchableOpacity>
