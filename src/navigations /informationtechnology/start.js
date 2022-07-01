@@ -1,9 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FanbitUtilityToken, Financialservice, Servicedetails } from "../../screens";
+import { InformationTectnology, InformationTectnologyDetails } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
-export const ServiceContainer = () => {
+export const InformationTechnologyContainer = () => {
   const getHeaderOption = (title) => {
     return {
       title: title,
@@ -18,18 +18,13 @@ export const ServiceContainer = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Financialservice"
-        component={Financialservice}
+        name="InformationTectnology"
+        component={InformationTectnology}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Servicedetails"
-        component={Servicedetails}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="FanbitUtilityToken"
-        component={FanbitUtilityToken}
+        name="InformationTectnologyDetails"
+        component={InformationTectnologyDetails}
         options={{ headerShown: false }}
       />
 

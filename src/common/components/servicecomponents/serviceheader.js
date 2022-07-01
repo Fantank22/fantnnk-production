@@ -19,9 +19,12 @@ export const ServiceHeader = ({ title }) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 15,
+        paddingHorizontal: 15,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        borderBottomColor: "#252525",
+        borderBottomWidth: 1,
+        paddingBottom:20
     },
     title: {
         color: "#fff",
