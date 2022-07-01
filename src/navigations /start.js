@@ -9,6 +9,7 @@ import { Fanbit } from "../screens";
 import { NotificationStartContainer } from "./notification";
 import { CareersStartContainer } from "./Careers/start";
 import { ServiceContainer } from "./service/start";
+import { InformationTechnologyContainer } from "./informationtechnology";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +61,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="ServiceContainer"
         component={ServiceContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="InformationTechnologyContainer"
+        component={InformationTechnologyContainer}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

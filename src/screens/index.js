@@ -18,4 +18,5 @@ export * from "./scouting";
 export * from "./notification";
 export * from "./careers";
 export * from "./service";
+export * from "./informationtechnology";
 

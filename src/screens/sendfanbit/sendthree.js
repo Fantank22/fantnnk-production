@@ -4,6 +4,9 @@ import {
   StyleSheet,
   Image,
   TouchableWithoutFeedback,
+  SafeAreaView,
+  ScrollView,
+  Platform,
 } from "react-native";
 import React from "react";
 import { Entypo } from "@expo/vector-icons";
@@ -12,64 +15,66 @@ import { ButtonWithIcon } from "./components/iconbutton";
 
 export const ArtistPageSendFanbitScreenThree = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
-        <Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={{ marginHorizontal: 15 }} >
+        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
           <Entypo name="cross" size={24} color="white" />
-        </Text>
-      </TouchableWithoutFeedback>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Your FanBits</Text>
-        <Text style={styles.title}>have been</Text>
-        <Text style={styles.title}>transferred</Text>
-      </View>
-      <View style={styles.imageContainer}>
-        <View style={styles.userimageBorder}>
-          <Image
-            style={styles.userImage}
-            source={require("../../common/assets/images/artistlist/artist-user-img.png")}
-          />
-          <AntDesign
-            style={styles.chcekIcon}
-            name="check"
-            size={15}
-            color="#fff"
-          />
-        </View>
-        <View style={styles.varticalLine}></View>
-        <View style={styles.fitbitTokenBorder}>
-          <Image
-            style={styles.fitbitTokenImage}
-            source={require("../../common/assets/images/artistlist/fitbit-token.png")}
-          />
-        </View>
-        <View style={styles.varticalLine}></View>
-        <View style={styles.artistimageBorder}>
-          <Image
-            style={styles.userImage}
-            source={require("../../common/assets/images/artistlist/artist-user-img.png")}
-          />
-          <AntDesign
-            style={styles.chcekIcon}
-            name="check"
-            size={15}
-            color="#fff"
-          />
-        </View>
-      </View>
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <TouchableWithoutFeedback>
-          <ButtonWithIcon title={"Build Your Scout Team"} iconNAme={"share"} />
         </TouchableWithoutFeedback>
-      </View>
-    </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Your FanBits</Text>
+          <Text style={styles.title}>have been</Text>
+          <Text style={styles.title}>transferred</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <View style={styles.userimageBorder}>
+            <Image
+              style={styles.userImage}
+              source={require("../../common/assets/images/artistlist/artist-user-img.png")}
+            />
+            <View style={styles.chcekIcon} >
+              <AntDesign
+                name="check"
+                size={15}
+                color="#fff"
+              />
+            </View>
+          </View>
+          <View style={styles.varticalLine}></View>
+          <View style={styles.fitbitTokenBorder}>
+            <Image
+              style={styles.fitbitTokenImage}
+              source={require("../../common/assets/images/artistlist/fitbit-token.png")}
+            />
+          </View>
+          <View style={styles.varticalLine}></View>
+          <View style={styles.artistimageBorder}>
+            <Image
+              style={styles.userImage}
+              source={require("../../common/assets/images/artistlist/artist-user-img.png")}
+            />
+            <View style={styles.chcekIcon}>
+              <AntDesign
+                name="check"
+                size={15}
+                color="#fff"
+              />
+            </View>
+          </View>
+        </View>
+        <View style={{ marginTop: 100 }} >
+          <TouchableWithoutFeedback>
+            <ButtonWithIcon title={"Build Your Scout Team"} iconNAme={"share"} />
+          </TouchableWithoutFeedback>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    paddingHorizontal: 20,
+    // paddingTop:Platform.OS === 'ios'?0:1
   },
   titleContainer: {
     marginTop: 40,

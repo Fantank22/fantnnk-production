@@ -9,9 +9,7 @@ export const Servicedetails = ({ route, navigation }) => {
         <SafeAreaView style={styles.container} >
             <StatusBar style='light' />
             <ServiceHeader title={item.title} />
-
-            <Image style={{ width: "100%", height: 174, marginTop: 40 }} source={item.image} />
-
+            <Image style={{ width: "100%", height: 174, marginTop: 20, marginHorizontal: 15, alignSelf: "center", borderRadius: 10 }} source={item.image} />
             <View style={{ marginHorizontal: 20, marginTop: 50 }} >
                 <Text style={{ fontSize: 18, fontWeight: "600", color: "#fff", textAlign: "center", marginVertical: 10 }} >{item.title}</Text>
                 <Text style={{ color: "#fff", textAlign: "center" }}>{item.description}</Text>

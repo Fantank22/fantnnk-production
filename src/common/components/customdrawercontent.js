@@ -192,25 +192,27 @@ export const CustomDrawerContent = ({ navigation }) => {
                 </HStack>
               </TouchableOpacity>
 
-              <HStack
-                alignItems={"center"}
-                style={{ marginBottom: 15, marginLeft: 22 }}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate('InformationTechnologyContainer')} >
                 <HStack
-                  justifyContent="space-between"
                   alignItems={"center"}
-                  style={{ marginLeft: 8, flex: 1 }}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
                 >
-                  <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    - Information Technology{" "}
-                  </Text>
-                  <Icon
-                    as={<Ionicons name="add-circle-outline" />}
-                    size={5}
-                    color="#6F767E"
-                  />
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Information Technology{" "}
+                    </Text>
+                    <Icon
+                      as={<Ionicons name="add-circle-outline" />}
+                      size={5}
+                      color="#6F767E"
+                    />
+                  </HStack>
                 </HStack>
-              </HStack>
+              </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate('Fanbit')} >
                 <HStack
                   alignItems={"center"}

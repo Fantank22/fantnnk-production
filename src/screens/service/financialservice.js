@@ -1,10 +1,12 @@
-import { View, Text, ScrollView, StyleSheet, ImageBackground, Image, TouchableOpacity, Platform } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, ImageBackground, Image, TouchableOpacity, Platform, SafeAreaView } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Feather, MaterialIcons } from '@expo/vector-icons'
 import eventImage from '../../common/assets/images/service/eventCuration.png'
 import searchExplore from '../../common/assets/images/service/searchandexplore.png'
 import socialNetwork from '../../common/assets/images/service/socialnetwork.png'
+import fanbitImage from '../../common/assets/images/service/fanbittoken.png'
+
 
 
 
@@ -14,13 +16,15 @@ export const Financialservice = ({ navigation }) => {
       title: "Event Curation",
       description: "FanTank's Event Curation Services converges emerging artists, top badge earners, brand sponsors, industry executives & influencers for elite showcases across the world ",
       image: eventImage,
-      btnTitle: "View Events"
+      btnTitle: "View Events",
+      link:"Servicedetails"
     },
     {
       title: "SEARCH & EXPLORE",
       description: "FanTank's Search & Explore functions as the main scouting navigation tool for Artists & Scouts  ",
       image: searchExplore,
-      btnTitle: "Explore Now"
+      btnTitle: "Explore Now",
+      link:"Servicedetails"
 
     },
     {
@@ -28,11 +32,18 @@ export const Financialservice = ({ navigation }) => {
       description: "Build Your Messaging & Social Network in Arts & Entertainment Industry",
       image: socialNetwork,
       btnTitle: "View Social Networks",
+      link:"Servicedetails"
     },
-    { title: "FANBIT UTILITY TOKEN", description: "", image: socialNetwork,btnTitle: "Buy Tokens", },
+    {
+      title: "FANBIT UTILITY TOKEN",
+      description: "FanBit™ is an internal non-securitized utility token that circulates on a Blockchain Architecture in the FanTank ecosystem as its main medium of talent voting expression - data measurement - commerce.",
+      image: fanbitImage,
+      btnTitle: "Buy Tokens",
+      link:"FanbitUtilityToken"
+    },
   ]
   return (
-    <View style={styles.container} >
+    <SafeAreaView style={styles.container} >
       <StatusBar style="light" />
       <ScrollView>
         <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/financialServicesbg.png')} style={styles.image} >
@@ -54,7 +65,7 @@ export const Financialservice = ({ navigation }) => {
           <Text style={{ color: "#D0D0D0", textAlign: "center" }} >The FanTank <Text style={{ color: "#fff", fontWeight: "700" }} >Financing Marketplace</Text> provides the following financing services for Artists, Labels, and individual investors. </Text>
           <View style={{ marginTop: 40 }} >
             {data.map((d, i) => (
-              <TouchableOpacity key={i} onPress={() => navigation.navigate('Servicedetails', { item: d })} >
+              <TouchableOpacity key={i} onPress={() => navigation.navigate(d.link, { item: d })} >
                 <View style={styles.item} >
                   <View style={{ width: "90%" }} >
                     <Text style={{ fontSize: 14, color: "#fff", marginHorizontal: 10 }} > {'\u2022'}  {d.title}</Text>
@@ -67,7 +78,7 @@ export const Financialservice = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 
