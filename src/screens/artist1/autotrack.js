@@ -25,9 +25,8 @@ export const ArtistToTrack = ({ navigation }) => {
           <Text style={styles.userNameColor}>missmolly11</Text> to your talent
           tracking list?
         </Text>
-        <TouchableOpacity onPress={() => openModal("bottom")}>
-          <Buttons title={"Yes, I do"} fillBtn={true} />
-        </TouchableOpacity>
+
+        <Buttons onPress={() => openModal("bottom")} title={"Yes, I do"} fillBtn={true} />
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.cancelBtn}>Cancel</Text>
         </TouchableOpacity>
@@ -41,12 +40,8 @@ export const ArtistToTrack = ({ navigation }) => {
               Go to Talent Tracking Dashboard now?
             </Text>
             <View style={styles.btns}>
-              <TouchableOpacity>
-                <Text style={styles.yesBtn}>Yes</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setOpen(false)}>
-                <Text style={styles.noBtn}>No</Text>
-              </TouchableOpacity>
+              <Buttons style={styles.yesBtn} onPress={() => openModal("bottom")} title={"Yes"} fillBtn={true} />
+              <Buttons style={styles.noBtn} onPress={() => setOpen(false)} title={"No"} outline={true} />
             </View>
           </Modal.Body>
         </Modal.Content>

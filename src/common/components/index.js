@@ -13,3 +13,4 @@ export * from "./customcheckbox";
 export * from "./custommulicheckbox";
 export * from "./customswitch";
 export * from "./financialservice";
+export * from "./servicecomponents";

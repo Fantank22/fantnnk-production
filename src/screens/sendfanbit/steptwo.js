@@ -70,12 +70,8 @@ export const ArtistPageSendFanbitScreenTwo = ({ navigation }) => {
           }
         />
       </View>
-      <TouchableOpacity
-        style={styles.buttons}
-        onPress={() => navigation.navigate("SendFanBitThree")}
-      >
-        <Buttons title={"Confirm and send"} fillBtn={true} />
-      </TouchableOpacity>
+
+      <Buttons style={{ marginTop:100 }} onPress={() => navigation.navigate("SendFanBitThree")} title={"Confirm and send"} fillBtn={true} />
     </View>
   );
 };
@@ -116,8 +112,5 @@ const styles = StyleSheet.create({
   optional: {
     fontSize: 9,
     color: "#888888",
-  },
-  buttons: {
-    marginTop: 100,
   },
 });

@@ -62,18 +62,9 @@ export const ArtistMore = ({ navigation }) => {
       </View>
 
       <View style={styles.buttonGroup}>
-        <TouchableOpacity
-          style={styles.buttons}
-          onPress={() => navigation.navigate("SendFanBit")}
-        >
-          <Buttons title={"Send FanBit"} fillBtn={true} />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.buttons}
-          onPress={() => navigation.navigate("FanTankNftMarketplace")}
-        >
-          <Buttons title={"Buy FanBit"} outline={true} />
-        </TouchableOpacity>
+
+        <Buttons onPress={() => navigation.navigate("SendFanBit")} title={"Send FanBit"} fillBtn={true} />
+        <Buttons onPress={() => navigation.navigate("FanTankNftMarketplace")} title={"Buy FanBit"} outline={true} />
       </View>
     </View>
   );
@@ -123,9 +114,6 @@ const styles = StyleSheet.create({
   },
   personalContent: {
     marginBottom: 40,
-  },
-  buttons: {
-    marginBottom: 15,
   },
   buttonGroup: {
     marginTop: 50,

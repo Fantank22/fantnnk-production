@@ -76,7 +76,7 @@ export const HomeStartRoutesContainer = () => {
             name="Middle"
             component={ScoutingContainer}
             options={{
-              tabBarButton: (props) => <CustomTabButton {...props}  />,
+              tabBarButton: (props) => <CustomTabButton {...props} />,
             }}
           />
 

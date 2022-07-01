@@ -1,16 +1,14 @@
 import { useContext } from "react";
-import { ActivityIndicator } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import UserContext from "../context/auth";
 import { AuthNavigationContainer } from "./auth";
 import { HomeDrawerContainer } from "./home/drawer";
 import { FanTankNftMarketplace } from "./fantanknftmarketplace";
-import { FinancialServicesProjectListings } from "./financialservicesprojectlistings/start";
 import { ContactUsContainer } from "./contactus";
 import { Fanbit } from "../screens";
 import { NotificationStartContainer } from "./notification";
 import { CareersStartContainer } from "./Careers/start";
+import { ServiceContainer } from "./service/start";
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +55,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="CareersStartContainer"
         component={CareersStartContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ServiceContainer"
+        component={ServiceContainer}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

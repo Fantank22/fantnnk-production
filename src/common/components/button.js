@@ -1,13 +1,21 @@
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { Text, StyleSheet } from "react-native";
-
-export const Buttons = ({ title, fillBtn }) => {
+export const Buttons = ({ title, fillBtn, onPress,style }) => {
   return (
     <>
       {fillBtn ? (
-        <Text style={styles.fillBtn}>{title}</Text>
+        <TouchableOpacity onPress={onPress} style={[styles.fillBtn,{...style}]} >
+          <View >
+            <Text style={{ color: "#fff", textAlign: "center", fontSize: 16, }} >{title}</Text>
+          </View>
+        </TouchableOpacity>
       ) : (
-        <Text style={styles.outlineBtn}>{title}</Text>
+        <TouchableOpacity style={[styles.outlineBtn,{...style}]}>
+          <View >
+            <Text style={{ color: "#fff", textAlign: "center", fontSize: 16, }}  >{title}</Text>
+          </View>
+        </TouchableOpacity>
+
       )}
     </>
   );
@@ -20,7 +28,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 20,
     borderRadius: 4,
-    fontSize: 16,
+    marginVertical: 10
+
   },
   outlineBtn: {
     color: "white",
@@ -29,6 +38,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 20,
     borderRadius: 4,
-    fontSize: 16,
+    marginVertical: 10
   },
 });

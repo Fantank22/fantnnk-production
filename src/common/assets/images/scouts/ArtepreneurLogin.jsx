@@ -7,7 +7,7 @@ import Buttons from '../../Components/Buttons'
 import SocialBtn from "../../Components/SocialBtn";
 import Navigation from '../../Navigation/Index'
 
-const ArtepreneurLogin = ({navigation}) => {
+const ArtepreneurLogin = ({ navigation }) => {
     const [show, setShow] = React.useState(false);
 
     return (
@@ -61,9 +61,7 @@ const ArtepreneurLogin = ({navigation}) => {
                     </View>
                     <Text style={{ color: "#378EF0", alignSelf: "flex-end", marginTop: 10 }} >forgot scout ID #?</Text>
                     <View style={{ marginVertical: 10 }} >
-                        <TouchableWithoutFeedback onPress={() => alert('hello')} >
-                            <Buttons title={'Login'} fillBtn={true} />
-                        </TouchableWithoutFeedback>
+                        <Buttons onPress={() => alert('hello')} title={'Login'} fillBtn={true} />
                         <Text style={{ color: "#B7B7B7", alignSelf: "center", marginTop: 10 }} >Don’t have an account ? <Text style={{ color: "#378EF0" }} >SIGN UP</Text></Text>
                     </View>
                     <View

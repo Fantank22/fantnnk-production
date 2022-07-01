@@ -5,6 +5,7 @@ import { AboutUsStartContainer } from "../aboutus";
 import { ScoutStartContainer } from "../scouts";
 import { ArtrepreneurStartContainer } from "../artpreneurrep";
 import { SendFanBitStartContainer } from "../sendfanbit";
+import { SearchStartContainer } from '../search';
 
 const Drawer = createDrawerNavigator();
 
@@ -37,6 +38,7 @@ export const HomeDrawerContainer = ({ navigation }) => {
         component={ArtrepreneurStartContainer}
       />
       <Drawer.Screen name="SendFanBit" component={SendFanBitStartContainer} />
+      <Drawer.Screen name="SearchStartContainer" component={SearchStartContainer} />
     </Drawer.Navigator>
   );
 };
