@@ -271,7 +271,7 @@ export const Careers = ({ navigation }) => {
           <View style={{ paddingLeft: 15 }} >
             <Text style={styles.footerTitle} >Locations</Text>
             <ScrollView horizontal={true} >
-              <View style={{ flexDirection: 'row',alignItems:"center" }}>
+              <View style={{ flexDirection: 'row', alignItems: "center" }}>
                 <View style={styles.locationsCard} >
                   <View style={styles.locationsFlug} >
                     <Image source={usaFlug} />

@@ -14,3 +14,4 @@ export * from "./custommulicheckbox";
 export * from "./customswitch";
 export * from "./financialservice";
 export * from "./servicecomponents";
+export * from "./eventstickating";
