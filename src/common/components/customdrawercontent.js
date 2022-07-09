@@ -263,20 +263,23 @@ export const CustomDrawerContent = ({ navigation }) => {
                 </HStack>
               </TouchableOpacity>
 
-              <HStack
-                alignItems={"center"}
-                style={{ marginBottom: 15, marginLeft: 22 }}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate('EventsTicketingContainer')} >
                 <HStack
-                  justifyContent="space-between"
                   alignItems={"center"}
-                  style={{ marginLeft: 8, flex: 1 }}
+                  style={{ marginBottom: 15, marginLeft: 22 }}
                 >
-                  <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
-                    - Showcases & Events{" "}
-                  </Text>
+                  <HStack
+                    justifyContent="space-between"
+                    alignItems={"center"}
+                    style={{ marginLeft: 8, flex: 1 }}
+                  >
+                    <Text style={{ fontSize: 16, color: "#A9A9A9" }}>
+                      - Showcases & Events{" "}
+                    </Text>
+                  </HStack>
                 </HStack>
-              </HStack>
+              </TouchableOpacity>
+
 
 
               <TouchableOpacity onPress={() => navigation.navigate('SearchStartContainer')} >
