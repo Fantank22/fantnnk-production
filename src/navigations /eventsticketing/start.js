@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { EventsGetTickets, EventsTicketCategories, EventsTicketing, EventsTicketsSeating, TicketsOrderSummary } from '../../screens'
+import { EventsGetTickets, EventsPageQRCode, EventsTicketCategories, EventsTicketing, EventsTicketsSeating, TicketsOrderSummary } from '../../screens'
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +40,11 @@ export const EventsTicketingContainer = () => {
       <Stack.Screen
         name="TicketsOrderSummary"
         component={TicketsOrderSummary}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="EventsPageQRCode"
+        component={EventsPageQRCode}
         options={{ headerShown: false }}
       />
 

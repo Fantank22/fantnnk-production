@@ -76,7 +76,7 @@ export const TicketsOrderSummary = ({ route, navigation }) => {
                         Note: To assure fans safety during these uncertain  times,all tickets are subject to restrictions and requirements put in...
                     </Text>
                     <View style={{ flexDirection: "row", alignItems: "center" }} >
-                        <Text style={{ color: "#929EFF", fontSize: 16 }} >See more</Text>
+                        <Text onPress={() => navigation.navigate('EventsPageQRCode')} style={{ color: "#929EFF", fontSize: 16 }} >See more</Text>
                         <MaterialIcons name="keyboard-arrow-down" size={24} color="#929EFF" />
                     </View>
                 </View>
