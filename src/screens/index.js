@@ -20,4 +20,5 @@ export * from "./careers";
 export * from "./service";
 export * from "./informationtechnology";
 export * from "./eventsticketing";
+export * from "./backendnavigation";
 
