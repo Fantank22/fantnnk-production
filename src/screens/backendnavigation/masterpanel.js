@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { BackendHeader } from '../../common/components/backendnavigation'
 import { MaterialIcons } from '@expo/vector-icons';
@@ -12,7 +12,8 @@ const data = [
         icon: "account-group",
         subTitle: "",
         active: true,
-        color: "#202A3F"
+        color: "#202A3F",
+        link: "Investors"
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const data = [
         icon: "account-circle-outline",
         subTitle: "",
         active: true,
-        color: "#2C1431"
+        color: "#2C1431",
+        link: "Investors"
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const data = [
         icon: "chart-line-variant",
         subTitle: "(All users)",
         active: true,
-        color: "#262037"
+        color: "#262037",
+        link: "Investors"
     },
     {
         id: 4,
@@ -36,7 +39,8 @@ const data = [
         icon: "bell-outline",
         subTitle: "",
         active: true,
-        color: "#12253C"
+        color: "#12253C",
+        link: "Investors"
     },
     {
         id: 5,
@@ -44,15 +48,80 @@ const data = [
         icon: "logout",
         subTitle: "",
         active: true,
-        color: "#763D3D"
+        color: "#763D3D",
+        link: "Investors"
+    },
+    {
+        id: 6,
+        title: "Mail ",
+        icon: "email-outline",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 7,
+        title: "Wallet ",
+        icon: "wallet-outline",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 8,
+        title: "Social Network ",
+        icon: "instagram",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 9,
+        title: "Event",
+        icon: "play-circle-outline",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 10,
+        title: "Services",
+        icon: "lightbulb-outline",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 11,
+        title: "Brands ",
+        icon: "globe-model",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
+    },
+    {
+        id: 12,
+        title: "Brands ",
+        icon: "account-multiple-outline",
+        subTitle: "",
+        active: false,
+        color: "#242424",
+        link: "Investors"
     },
 ]
 
-export const MasterPanel = () => {
+export const MasterPanel = ({ navigation }) => {
+
     const renderItem = ({ item }) => (
-        <TouchableOpacity style={[styles.card, { backgroundColor: item.color }]}>
-            <MaterialCommunityIcons name={item.icon} size={32} color="#fff" />
-            <Text style={styles.title} >{item.title}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Investors')} style={[styles.card, { backgroundColor: item.color }]}>
+            <MaterialCommunityIcons name={item.icon} size={32} color={item?.active ? "#fff" : "#888888"} />
+            <Text style={[styles.title, { color: item?.active ? "#fff" : "#888888" }]} >{item.title}</Text>
         </TouchableOpacity>
     );
 
@@ -77,10 +146,10 @@ export const MasterPanel = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#000"
+        backgroundColor: "#000",
+        paddingTop: Platform.OS === 'ios' ? 0 : 40
     },
     title: {
-        color: "#fff",
         fontSize: 18,
         marginTop: 10
     },

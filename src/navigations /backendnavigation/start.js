@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Investors } from "../../screens/backendnavigation/investors";
 import { MasterPanel } from "../../screens/backendnavigation/masterpanel";
 
 
@@ -21,6 +22,11 @@ export const BackEndNavigationStartContainer = () => {
       <Stack.Screen
         name="MasterPanel"
         component={MasterPanel}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Investors"
+        component={Investors}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
