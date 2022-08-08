@@ -8,6 +8,7 @@ import { ArtistFiveStartContainer } from "../artist5/start";
 import { ArtistSixStartContainer } from "../artist6/start";
 import { TopTrendingArtists } from "./topartist";
 import { TopTrendingScouts } from "./topscouts";
+import { BackEndNavigationStartContainer } from "../backendnavigation/start";
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +69,11 @@ export const HomeRoutesContainer = () => {
       <Stack.Screen
         name="Artist6"
         component={ArtistSixStartContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="BackEndNavigationStartContainer"
+        component={BackEndNavigationStartContainer}
         options={{ headerShown: false }}
       />
 

@@ -71,7 +71,7 @@ export const CustomDrawerContent = ({ navigation }) => {
           {aboutUpOpen && (
             <View>
               <TouchableOpacity
-                onPress={() => navigation.navigate("ScoutStartDrawer")}
+                onPress={() => navigation.navigate("AboutUsStartDrawer")}
               >
                 <HStack
                   alignItems={"center"}
@@ -332,6 +332,14 @@ export const CustomDrawerContent = ({ navigation }) => {
               <Ionicons name="call-outline" size={21} color="#FFFFFF" />
               <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
                 Service2
+              </Text>
+            </HStack>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('BackEndNavigationStartContainer')} >
+            <HStack alignItems={"center"} style={{ marginBottom: 32 }}>
+              <Ionicons name="call-outline" size={21} color="#FFFFFF" />
+              <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
+                Backend Navigation
               </Text>
             </HStack>
           </TouchableOpacity>
