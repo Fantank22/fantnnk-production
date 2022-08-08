@@ -12,9 +12,7 @@ export const RegularInvestments = () => {
     return (
         <View style={{ marginTop: 20 }} >
             <LineChart
-                enderVerticalLabels={{
-                    data: ['100', '100']
-                }}
+
                 data={{
                     labels: ['0', '1D', '1W', '1M', '3M', '6M', '12M', 'All'],
                     datasets: [{
@@ -34,10 +32,10 @@ export const RegularInvestments = () => {
                     backgroundColor: '#1B1B1B',
                     backgroundGradientFrom: '#1B1B1B',
                     backgroundGradientTo: '#1B1B1B',
-                    decimalPlaces: 2, // optional, defaults to 2dp
+                    decimalPlaces: 1,
                     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                     style: {
-                        borderRadius: 16
+                        borderRadius: 1,
                     }
                 }}
                 bezier
