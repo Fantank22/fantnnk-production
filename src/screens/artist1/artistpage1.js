@@ -16,7 +16,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Button, HStack, Icon, Stack, VStack } from "native-base";
 import { Entypo, AntDesign } from "@expo/vector-icons";
 import { GraphTab, MediaView, StickyHeader } from "../../common";
-import{StatusBar} from 'expo-status-bar'
+import { StatusBar } from 'expo-status-bar'
 
 export const ArtistPage = ({ navigation }) => {
   return (

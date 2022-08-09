@@ -21,4 +21,5 @@ export * from "./service";
 export * from "./informationtechnology";
 export * from "./eventsticketing";
 export * from "./backendnavigation";
+export * from "./equitycrowdfunding";
 

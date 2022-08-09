@@ -17,14 +17,14 @@ export const Financialservice = ({ navigation }) => {
       description: "FanTank's Event Curation Services converges emerging artists, top badge earners, brand sponsors, industry executives & influencers for elite showcases across the world ",
       image: eventImage,
       btnTitle: "View Events",
-      link:"Servicedetails"
+      link: "Servicedetails"
     },
     {
       title: "SEARCH & EXPLORE",
       description: "FanTank's Search & Explore functions as the main scouting navigation tool for Artists & Scouts  ",
       image: searchExplore,
       btnTitle: "Explore Now",
-      link:"Servicedetails"
+      link: "Servicedetails"
 
     },
     {
@@ -32,14 +32,14 @@ export const Financialservice = ({ navigation }) => {
       description: "Build Your Messaging & Social Network in Arts & Entertainment Industry",
       image: socialNetwork,
       btnTitle: "View Social Networks",
-      link:"Servicedetails"
+      link: "Servicedetails"
     },
     {
       title: "FANBIT UTILITY TOKEN",
       description: "FanBit™ is an internal non-securitized utility token that circulates on a Blockchain Architecture in the FanTank ecosystem as its main medium of talent voting expression - data measurement - commerce.",
       image: fanbitImage,
       btnTitle: "Buy Tokens",
-      link:"FanbitUtilityToken"
+      link: "FanbitUtilityToken"
     },
   ]
   return (
@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
   image:
   {
     height: 174,
-    marginTop: 35,
     paddingHorizontal: 15
   },
   header: {
