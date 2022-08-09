@@ -9,11 +9,11 @@ export const SearchHome = ({ navigation }) => {
             <StatusBar style="light" />
             <ScrollView style={{ paddingHorizontal: 15 }} >
                 <ImageBackground source={require('../../common/assets/images/search/searchHomeBanner.png')} style={{ height: 184, paddingHorizontal: 20 }} >
-                    <View style={{ flexDirection: "row", justifyContent: "flex-end", alignItems: "center", marginTop: 40 }} >
+                    <View style={{ flexDirection: "row", justifyContent: "flex-end", alignItems: "center", marginTop: 50 }} >
                         <FontAwesome5 style={{ marginRight: 10 }} name="user-circle" size={23} color="#fff" />
                         <Feather name="bell" size={23} color="#fff" />
                     </View>
-                    <Text style={{ color: "#fff", fontSize: 22, textAlign: "center", marginTop: 10 }} >Talent & Scout Search</Text>
+                    <Text style={{ color: "#fff", fontSize: 22, textAlign: "center" }} >Talent & Scout Search</Text>
                     <TouchableOpacity onPress={() => navigation.navigate('Search2')} >
                         <View style={{ backgroundColor: "#2B2B2B", flexDirection: "row", paddingVertical: 10, paddingHorizontal: 20, borderRadius: 10, marginTop: 30, alignItems: "center", justifyContent: "space-between" }} >
                             <View style={{ flexDirection: "row", alignItems: "center" }} >
@@ -146,6 +146,6 @@ export const SearchHome = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#000",
-        marginBottom: Platform.OS === "ios" ? 50 : 20
+        // marginBottom: Platform.OS === "ios" ? 50 : 20
     }
 })
