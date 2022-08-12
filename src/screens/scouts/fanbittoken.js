@@ -1,14 +1,14 @@
-import { ImageBackground, Platform, StyleSheet, Text, View, TouchableWithoutFeedback, ScrollView, Image, SafeAreaView,  TouchableOpacity } from 'react-native'
+import { ImageBackground, Platform, StyleSheet, Text, View, TouchableWithoutFeedback, ScrollView, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { AntDesign, Entypo } from '@expo/vector-icons';
 
-export const Fanbit = ({ navigation }) => {
+export const FanbitToken = ({ navigation }) => {
 
 
     return (
         <View style={styles.container} >
             <SafeAreaView >
-                
+
                 <ScrollView>
                     <ImageBackground source={require('../../common/assets/images/scouts/fanbitbanner.png')} style={{ height: 170, paddingHorizontal: 15 }} >
                         <View style={{ marginTop: Platform.OS === 'ios' ? 20 : 40, flexDirection: "row", alignItems: "center" }} >
@@ -28,11 +28,11 @@ export const Fanbit = ({ navigation }) => {
                                 FanBit is the ecosystem's non security utility token that circulates through it on Blockchain Architecture as the medium for talent voting, data measurement,  commerce, and talent scouting commissions
                             </Text>
                         </View>
-                        <View style={{ padding:20,backgroundColor:"#252525",borderRadius:10,marginTop:20 }} >
+                        <View style={{ padding: 20, backgroundColor: "#252525", borderRadius: 10, marginTop: 20 }} >
                             <Text style={{ fontSize: 16, color: "#fff", textAlign: "center" }} >Skill at spotting artistic talent & careful management of tokens helps determine your badge level</Text>
                             <TouchableOpacity>
-                                <View style={{ borderColor:"#378EF0",borderWidth:1,alignSelf:"center",paddingVertical:Platform.OS === 'ios' ? 20 : 10,paddingHorizontal:30,borderRadius:5,marginTop:20,marginBottom:10 }} >
-                                    <Text style={{ color:"#378EF0",fontSize:16,fontWeight:"600" }} >Purchase FanBit Now</Text>
+                                <View style={{ borderColor: "#378EF0", borderWidth: 1, alignSelf: "center", paddingVertical: Platform.OS === 'ios' ? 20 : 10, paddingHorizontal: 30, borderRadius: 5, marginTop: 20, marginBottom: 10 }} >
+                                    <Text style={{ color: "#378EF0", fontSize: 16, fontWeight: "600" }} >Purchase FanBit Now</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -49,6 +49,6 @@ export const Fanbit = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#000",
-        flex:1
+        flex: 1
     }
 })

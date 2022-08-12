@@ -48,25 +48,6 @@ export const HomeScreen = ({ navigation }) => {
               <Text style={{ color: "#C5BBBB", fontSize: 12, marginLeft: 10 }} >Artists, Scouts, Art Forms, etc</Text>
             </View>
           </TouchableOpacity>
-
-          {/* <Input
-            w={{ base: "100%", md: "100" }}
-            bg="gray.800"
-            InputLeftElement={
-              <Icon
-                as={<EvilIcons name="search" size={24} />}
-                size={5}
-                ml="2"
-                color="muted.400"
-              />
-            }
-            placeholder="Artists, Scouts, Art Forms, etc"
-            borderRadius="xl"
-            borderColor={"transparent"}
-            color={"white"}
-            mt={10}
-            mb={-1}
-          /> */}
         </ImageBackground>
         <View
           style={{
@@ -225,26 +206,42 @@ export const HomeScreen = ({ navigation }) => {
         <View style={{ paddingHorizontal: 15, marginTop: 20 }} >
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }} >
 
-            <View style={{ width: "48%", marginVertical: 10 }} >
-              <TouchableOpacity onPress={() => alert("ok")}  >
-                <Image style={{ width: '100%', height: 208, borderRadius: 10 }} source={require('../../common/assets/images/home/artist1.png')} />
-              </TouchableOpacity>
-            </View>
-            <View style={{ width: "48%", marginVertical: 10 }} >
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
+              <Image style={{ width: '100%', height: 208, borderRadius: 10 }} source={require('../../common/assets/images/home/artist1.png',)} />
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge10.png')} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
               <Image style={{ width: '100%', borderRadius: 10 }} source={require('../../common/assets/images/home/artist2.png')} />
-            </View>
-            <View style={{ width: "48%", marginVertical: 10 }} >
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge9.png')} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
               <Image style={{ width: '100%', borderRadius: 10 }} source={require('../../common/assets/images/home/artist3.png')} />
-            </View>
-            <View style={{ width: "48%", marginVertical: 10 }} >
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge8.png')} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
               <Image style={{ width: '100%', borderRadius: 10 }} source={require('../../common/assets/images/home/artist4.png')} />
-            </View>
-            <View style={{ width: "48%", marginVertical: 10 }} >
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge6.png')} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
               <Image style={{ width: '100%', borderRadius: 10 }} source={require('../../common/assets/images/home/artist5.png')} />
-            </View>
-            <View style={{ width: "48%", marginVertical: 10 }} >
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge3.png')} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('ok')} style={styles.singleCard} >
               <Image style={{ width: '100%', borderRadius: 10 }} source={require('../../common/assets/images/home/artist6.png')} />
-            </View>
+              <View style={styles.badgeposition} >
+                <Image style={{ height: 34, width: 34, }} source={require('../../common/assets/images/badge/badge3.png')} />
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={{ marginVertical: 20 }} >
@@ -310,4 +307,6 @@ const styles = StyleSheet.create({
   viewAll: {
     color: "#378EF0",
   },
+  singleCard: { width: "48%", marginVertical: 10, position: "relative" },
+  badgeposition: { height: 40, width: 40, borderRadius: 20, backgroundColor: "rgba(26, 37, 62, 0.7)", position: "absolute", alignItems: "center", justifyContent: "center", right: 10, top: 10 }
 });

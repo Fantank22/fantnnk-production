@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Scouts, BadgesRequirements, BadgeDetail, HowItWorks, Videos, Fanbit, ScoutingStats } from "../../screens";
+import { Scouts, BadgesRequirements, BadgeDetail, HowItWorks, Videos, FanbitToken, ScoutingStats } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
