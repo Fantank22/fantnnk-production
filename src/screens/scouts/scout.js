@@ -22,7 +22,7 @@ export const Scouts = ({ navigation }) => {
       { title: "How It Works ", link: "HowItWorks" },
       { title: "Video ", link: "Videos" },
       { title: "Badges Requirements ", link: "BadgesRequirements" },
-      { title: "FanBit ", link: "Fanbit" },
+      { title: "FanBit ", link: "FanbitToken" },
       { title: "Compensation Structure ", link: "BadgesRequirements" },
       { title: "Stats ", link: "ScoutingStats" },
     ];

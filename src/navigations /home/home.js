@@ -9,6 +9,7 @@ import { ArtistSixStartContainer } from "../artist6/start";
 import { TopTrendingArtists } from "./topartist";
 import { TopTrendingScouts } from "./topscouts";
 import { BackEndNavigationStartContainer } from "../backendnavigation/start";
+import { FanbitStackContainer } from "../fanbit/start";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,11 @@ export const HomeRoutesContainer = () => {
       <Stack.Screen
         name="BackEndNavigationStartContainer"
         component={BackEndNavigationStartContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FanbitStackContainer"
+        component={FanbitStackContainer}
         options={{ headerShown: false }}
       />
 

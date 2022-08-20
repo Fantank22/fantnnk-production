@@ -1,16 +1,16 @@
-import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, View, Platform } from "react-native";
 import React from "react";
-export const Buttons = ({ title, fillBtn, onPress,style }) => {
+export const Buttons = ({ title, fillBtn, onPress, style }) => {
   return (
     <>
       {fillBtn ? (
-        <TouchableOpacity onPress={onPress} style={[styles.fillBtn,{...style}]} >
+        <TouchableOpacity onPress={onPress} style={[styles.fillBtn, { ...style }]} >
           <View >
             <Text style={{ color: "#fff", textAlign: "center", fontSize: 16, }} >{title}</Text>
           </View>
         </TouchableOpacity>
       ) : (
-        <TouchableOpacity style={[styles.outlineBtn,{...style}]}>
+        <TouchableOpacity style={[styles.outlineBtn, { ...style }]}>
           <View >
             <Text style={{ color: "#fff", textAlign: "center", fontSize: 16, }}  >{title}</Text>
           </View>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     color: "white",
     backgroundColor: "#378EF0",
     textAlign: "center",
-    padding: 20,
+    padding: Platform.OS === 'ios' ? 20 : 15,
     borderRadius: 4,
     marginVertical: 10
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#378EF0",
     textAlign: "center",
-    padding: 20,
+    padding: Platform.OS === 'ios' ? 20 : 15,
     borderRadius: 4,
     marginVertical: 10
   },

@@ -5,7 +5,7 @@ import { AuthNavigationContainer } from "./auth";
 import { HomeDrawerContainer } from "./home/drawer";
 import { FanTankNftMarketplace } from "./fantanknftmarketplace";
 import { ContactUsContainer } from "./contactus";
-import { Fanbit } from "../screens";
+import { Fanbit, FanbitToken } from "../screens";
 import { NotificationStartContainer } from "./notification";
 import { CareersStartContainer } from "./Careers/start";
 import { ServiceContainer } from "./service/start";
@@ -50,8 +50,8 @@ export const StartApp = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Fanbit"
-        component={Fanbit}
+        name="FanbitToken"
+        component={FanbitToken}
         options={{ headerShown: false }}
       />
       <Stack.Screen
