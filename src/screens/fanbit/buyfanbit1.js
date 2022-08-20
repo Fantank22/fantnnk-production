@@ -122,13 +122,13 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderRadius: 20,
-        backgroundColor: "#378EF0"
+        backgroundColor: "#378EF0",
+        borderColor: "#378EF0",
+        borderWidth: 1,
     },
 
 
     bgImage1: {
-        height: 300,
-        width: 200,
         position: "absolute",
         top: 40,
         right: 0,
@@ -136,8 +136,6 @@ const styles = StyleSheet.create({
     },
 
     bgImage2: {
-        height: 214,
-        width: 281,
         position: "absolute",
         bottom: 0,
         left: 0,

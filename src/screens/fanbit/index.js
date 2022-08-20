@@ -1,2 +1,7 @@
 export * from './fanbit'
 export * from './buyfanbit1'
+export * from './buyfanbit2'
+export * from './payment'
+export * from './fanbitsend'
+export * from './fanbitselecttransactiontype'
+export * from './fanbittransparency'

@@ -136,7 +136,7 @@ export const Fanbit1 = ({ navigation }) => {
                     <View>
                         <Text style={styles.title} >Fanbit Balance</Text>
                         <Text style={styles.tokenTitle} >100 Tokens</Text>
-                        <TouchableOpacity style={styles.butTokenBtn} >
+                        <TouchableOpacity onPress={() => navigation.navigate('BuyFanbit2')} style={styles.butTokenBtn} >
                             <Text style={styles.btnTitle} >Buy Token</Text>
                         </TouchableOpacity>
                     </View>
@@ -242,8 +242,6 @@ const styles = StyleSheet.create({
 
 
     bgImage1: {
-        height: 300,
-        width: 200,
         position: "absolute",
         top: 40,
         right: 0,
@@ -251,8 +249,6 @@ const styles = StyleSheet.create({
     },
 
     bgImage2: {
-        height: 214,
-        width: 281,
         position: "absolute",
         bottom: 0,
         left: 0,
