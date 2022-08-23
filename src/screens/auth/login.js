@@ -19,6 +19,7 @@ import {
   inputHandle,
   MyKeyboardAvoidingView,
   SocianBtn,
+  Buttons,
 } from "../../common";
 import UserContext from "../../context/auth";
 import { StatusBar } from "expo-status-bar";
@@ -28,11 +29,11 @@ export const LoginScreen = ({ navigation }) => {
 
   const [form, setForm] = useState({
     email: {
-      value: "",
+      value: "prince@gmail.com",
       error: false,
     },
     password: {
-      value: "",
+      value: "12345678",
       error: false,
     },
   });
@@ -102,29 +103,30 @@ export const LoginScreen = ({ navigation }) => {
       style={{
         flex: 1,
         backgroundColor: "#0B0B0B",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
       <StatusBar style="light" />
       <MyKeyboardAvoidingView>
         <ScrollView>
-          <View style={{ flex: 1 }}>
-            <ImageBackground source={require('../../common/assets/images/login/background.png')} style={{ height: 500, padding: 20 }} >
+          <View>
+            <ImageBackground source={require('../../common/assets/images/login/background.png')}
+              style={{
+                height: Platform.OS === 'ios' ? 490 : 430,
+                padding: 20
+              }} >
               <View
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: Platform.OS === "ios" ? 100 : 50,
+                  marginTop: Platform.OS === "ios" ? 100 : 40,
                 }}
               >
                 <Image
                   source={require("../../common/assets/images/logo-text.png")}
                 />
               </View>
-              <Text style={[styles.screenTitle, { marginTop: 30 }]}>Welcome back! Enter email and password to sign in.</Text>
+              <Text style={[styles.screenTitle, { marginTop: 20 }]}>Welcome back! </Text>
               <Text style={[styles.screenTitle, { marginBottom: 30 }]}>Enter email and password to sign in.</Text>
 
 
@@ -137,14 +139,14 @@ export const LoginScreen = ({ navigation }) => {
                   onChangeText={(value) => inputHandle("email", value, setForm)}
                   type="email"
                   color={"#fff"}
-                  value={'prince@gmailsds.com'}
+                  value={'prince@gmail.com'}
                 />
                 <FormControl.ErrorMessage>
                   Try different from previous passwords.
                 </FormControl.ErrorMessage>
               </FormControl>
 
-              <FormControl isInvalid={form.password.error} w="100%" mb={4}>
+              <FormControl isInvalid={form.password.error} w="100%" mb={2}>
                 <Input
                   placeholder="Enter password"
                   height={50}
@@ -166,12 +168,9 @@ export const LoginScreen = ({ navigation }) => {
                   <Text style={styles.forgetText}>Forgot Password ?</Text>
                 </TouchableOpacity>
               </View>
-
-              <Button colorScheme="primary" onPress={loginHandle}>
-                Sign In
-              </Button>
+              <Buttons onPress={() => loginHandle()} title={'Sign In'} fillBtn />
             </ImageBackground>
-            <View style={{ marginTop: 20,padding:20 }} >
+            <View style={{ paddingHorizontal: 20, marginTop: 40 }} >
               <Divider tip="OR" />
               <SocianBtn
                 iconName="facebook-f"
@@ -211,14 +210,6 @@ export const LoginScreen = ({ navigation }) => {
           </View>
         </ScrollView>
       </MyKeyboardAvoidingView>
-      {/* <Image
-        source={require("../../common/assets/images/1.png")}
-        style={styles.bgImage1}
-      />
-      <Image
-        source={require("../../common/assets/images/2.png")}
-        style={styles.bgImage2}
-      /> */}
     </View>
   );
 };
@@ -276,7 +267,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   forgetText: {
-    color: "#fff",
+    color: "#378EF0",
     fontSize: 16,
     fontWeight: "700",
   },
