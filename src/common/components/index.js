@@ -16,3 +16,4 @@ export * from "./financialservice";
 export * from "./servicecomponents";
 export * from "./eventstickating";
 export * from "./fanbit";
+export * from "./forgot";
