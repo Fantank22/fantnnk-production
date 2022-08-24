@@ -6,7 +6,7 @@ export const Divider = ({ tip }) => {
     <View
       style={{
         marginTop: 5,
-        marginBottom: 20,
+        marginBottom: 10,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
