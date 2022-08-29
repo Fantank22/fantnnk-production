@@ -17,6 +17,41 @@ export const Scouts = ({ navigation }) => {
   const [index, setIndex] = useState(1);
   const tabs = ["Digital Talent Scouts", "Artrepreneur Level"];
 
+  const DigitalTalentScouts = () => {
+    const facilitators = [
+      { title: "How It Works ", link: "HowItWorks" },
+      { title: "Video ", link: "Videos" },
+      { title: "Badges Requirements ", link: "BadgesRequirements" },
+      { title: "FanBit ", link: "FanbitToken" },
+      { title: "Compensation Structure ", link: "BadgesRequirements" },
+      { title: "Stats ", link: "ScoutingStats" },
+    ];
+    return (
+      <View>
+        {facilitators.map((f, i) => (
+          <TouchableOpacity key={i} onPress={() => navigation.navigate(f.link)}>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                backgroundColor: "#2A2A2A",
+                paddingHorizontal: 20,
+                paddingVertical: 15,
+                marginVertical: 10,
+                borderRadius: 10,
+                borderColor: "#3D3D3D",
+                borderWidth: 1,
+              }}
+            >
+              <Text style={{ color: "#D4D4D4", fontSize: 16 }}>{f.title}</Text>
+              <AntDesign name="right" size={18} color="white" />
+            </View>
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  };
   const ArtrepreneurLavel = () => {
     const facilitators = [
       { title: "How It Works ", link: "HowItWorks" },
@@ -52,7 +87,7 @@ export const Scouts = ({ navigation }) => {
       </View>
     );
   };
-  const contants = [<ArtrepreneurLavel />, <ArtrepreneurLavel />];
+  const contants = [<DigitalTalentScouts />, <ArtrepreneurLavel />];
 
   return (
     <ScrollView style={styles.container}>
@@ -161,7 +196,7 @@ export const Scouts = ({ navigation }) => {
         </View>
         <View style={{ paddingHorizontal: 20, marginTop: 10 }}>
           {contants.map((t, i) => (
-            <View >{i + 1 === index && <>{t}</>}</View>
+            <View key={i} >{i + 1 === index && <>{t}</>}</View>
           ))}
         </View>
       </View>
