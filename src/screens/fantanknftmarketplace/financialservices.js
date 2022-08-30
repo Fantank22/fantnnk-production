@@ -7,7 +7,7 @@ export const FinancialServices = ({ navigation }) => {
     const data = [
         { title: "EC", title2: "Equity Crowdfunding", link: "EquityCrowdFunding", },
         { title: "NFT", title2: "Non Fungible Tokens", link: "EquityCrowdFunding" },
-        { title: "SPAC", title2: "Special Purpose Acquisition Company  Financing", link: "EquityCrowdFunding" },
+        { title: "SPAC", title2: "Special Purpose Acquisition Company  Financing", link: "SpacStartContainer" },
         { title: "Artrepreneurs' Project Mobilization & Financing Pool", title2: "", link: "EquityCrowdFunding" },
     ]
     return (
