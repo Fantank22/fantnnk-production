@@ -4,25 +4,20 @@ import { StatusBar } from 'expo-status-bar'
 import { Feather, Ionicons, MaterialIcons, EvilIcons, Entypo, AntDesign } from '@expo/vector-icons'
 import { Icon, Input } from 'native-base'
 
-const StatsActivity = () => {
-    const [moreDetails, setMoreDetails] = React.useState()
-    const handleMoreInfo = e => {
-        setMoreDetails(e);
-    }
-    const handleLess = (e) => {
-        setMoreDetails(e - 10);
-    }
+export const StatsActivity = () => {
+    const [moreDetails, setMoreDetails] = React.useState(1)
+
     return (
         <View style={styles.container} >
             <StatusBar style="light" />
             <ScrollView>
-                <ImageBackground source={require('../../assets/FinancialServices/activityBanner.png')} style={{ height: 130, marginTop: 35, paddingHorizontal: 15 }} >
+                <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/activityBanner.png')} style={{ height: 130, marginTop: 35, paddingHorizontal: 15 }} >
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 10 }} >
                         <MaterialIcons name="arrow-back-ios" size={24} color="white" />
                         <View style={{ flexDirection: "row", alignItems: "center" }} >
                             <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: "#1A1A1A", paddingVertical: 6, paddingHorizontal: 6, borderRadius: 30, borderColor: "#444444", borderWidth: 1 }} >
                                 <View style={{ backgroundColor: "#444444", borderRadius: 20, paddingVertical: 5, paddingHorizontal: 5, marginRight: 5 }} >
-                                    <Image source={require('../../assets/FinancialServices/metamask.png')} />
+                                    <Image source={require('../../common/assets/images/fantanknftmarketplace/metamask.png')} />
                                 </View>
                                 <Text style={{ color: "#fff", marginRight: 5 }} >10.80</Text>
                             </View>
@@ -56,26 +51,20 @@ const StatsActivity = () => {
                 </ScrollView>
                 <View style={{ paddingHorizontal: 15, marginTop: 15 }} >
                     {[1, 2, 3, 4, 5, 6, 7].map((data, i) => (
-                        <View style={{ backgroundColor: "#1A1A1A", padding: 15, borderColor: "#404040", borderWidth: 1, borderRadius: 10, marginVertical: 5 }} >
+                        <View key={i} style={{ backgroundColor: "#1A1A1A", padding: 15, borderColor: "#404040", borderWidth: 1, borderRadius: 10, marginVertical: 5 }} >
                             <View style={{ flexDirection: "row", justifyContent: "space-between" }} >
                                 <View style={{ flexDirection: "row", alignItems: "center" }} >
                                     <View style={{ position: "relative" }} >
-                                        <Image style={{ height: 44, width: 44, borderColor: "#fff", borderWidth: 1, borderRadius: 22 }} source={require('../../assets/artist/artist2.png')} />
-                                        <Image style={{ height: 18, width: 18, position: "absolute", bottom: 0, left: 30 }} source={require('../../assets/FinancialServices/verified.png')} />
+                                        <Image style={{ height: 44, width: 44, borderColor: "#fff", borderWidth: 1, borderRadius: 22 }} source={require('../../common/assets/images/artist/artist2.png')} />
+                                        <Image style={{ height: 18, width: 18, position: "absolute", bottom: 0, left: 30 }} source={require('../../common/assets/images/fantanknftmarketplace/verified.png')} />
                                     </View>
                                     <View style={{ marginLeft: 15 }}>
                                         <Text style={{ fontWeight: "700", color: "#fff" }} >Niken Dewanil</Text>
                                         <Text style={{ fontSize: 12, color: "#CDCACA" }} >@cyberClub</Text>
 
-                                        {moreDetails === i + 1 ? (
-                                            <TouchableWithoutFeedback onPress={() => handleLess(i)} >
-                                                <Text style={{ fontSize: 12, color: "#378EF0", marginTop: 5 }} ><AntDesign name="minus" size={14} color="#378EF0" /> Less</Text>
-                                            </TouchableWithoutFeedback>
-                                        ) : (
-                                            <TouchableWithoutFeedback onPress={() => handleMoreInfo(i + 1)} >
-                                                <Text style={{ fontSize: 12, color: "#378EF0", marginTop: 5 }} ><AntDesign name="plus" size={14} color="#378EF0" /> MORE</Text>
-                                            </TouchableWithoutFeedback>
-                                        )}
+                                        <TouchableWithoutFeedback onPress={() => setMoreDetails(i + 1)} >
+                                            <Text style={{ fontSize: 12, color: "#378EF0", marginTop: 5 }} ><AntDesign name={moreDetails === i + 1 ? 'minus' : 'plus'} size={14} color="#378EF0" /> {moreDetails === i + 1 ? 'Less' : 'More'}</Text>
+                                        </TouchableWithoutFeedback>
                                     </View>
                                 </View>
 
@@ -83,7 +72,7 @@ const StatsActivity = () => {
 
                                     <Text style={{ color: "#CDCACA", alignSelf: "flex-end" }} > List</Text>
                                     <View style={{ flexDirection: "row", alignItems: "center", alignSelf: "flex-end" }} >
-                                        <Image source={require('../../assets/FinancialServices/tron.png')} />
+                                        <Image source={require('../../common/assets/images/fantanknftmarketplace/tron.png')} />
                                         <Text style={{ fontSize: 14, fontWeight: "700", color: "#fff", marginLeft: 5 }} >220</Text>
                                     </View>
                                     <Text style={{ color: "#CDCACA", fontSize: 12 }} >  <Entypo name="back-in-time" size={17} color="#CDCACA" /> 10 sec ago</Text>
@@ -122,12 +111,12 @@ const StatsActivity = () => {
                 </View>
             </ScrollView >
         </View >
-        // <Ionicons name="md-options-outline" size={24} color="black" />
     )
 }
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#000",
+        flex: 1
     },
 
     allTab: {
@@ -152,5 +141,3 @@ const styles = StyleSheet.create({
 
     }
 })
-
-export default StatsActivity

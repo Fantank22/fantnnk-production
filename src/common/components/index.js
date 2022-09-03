@@ -4,6 +4,7 @@ export * from "./keyboardavoidingview";
 export * from "./spapcer";
 export * from "./stickyheader";
 export * from "./customdrawercontent";
+export * from "./customnftdrawer";
 export * from "./socialbuttons";
 export * from "./artistcomponents";
 export * from "./searchcomponents";

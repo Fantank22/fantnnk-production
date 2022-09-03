@@ -1,22 +1,18 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FinancialServices, MainFantankMarketplace, SingleNFT, Favourites, ConnectWallet, EquityCrowdFunding } from "../../screens";
+import { FinancialServices, MainFantankMarketplace, SingleNFT, Favourites, ConnectWallet, EquityCrowdFunding, ExploreFantankMarketplace, StatsActivity, } from "../../screens";
+import { NftMarketPlaceDrawerContainer } from "./drawer";
 
 const Stack = createNativeStackNavigator();
 
 export const FanTankNftMarketplace = () => {
-  const getHeaderOption = (title) => {
-    return {
-      title: title,
-      headerStyle: {
-        backgroundColor: "#121212",
-        color: "#fff",
-      },
-      headerTintColor: "#fff",
-    };
-  };
 
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="NftMarketPlaceDrawerContainer"
+        component={NftMarketPlaceDrawerContainer}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="FinancialServices"
         component={FinancialServices}
@@ -27,13 +23,11 @@ export const FanTankNftMarketplace = () => {
         component={MainFantankMarketplace}
         options={{ headerShown: false }}
       />
-
       <Stack.Screen
         name="SingleNFT"
         component={SingleNFT}
         options={{ headerShown: false }}
       />
-
       <Stack.Screen
         name="Favourites"
         component={Favourites}
@@ -47,6 +41,16 @@ export const FanTankNftMarketplace = () => {
       <Stack.Screen
         name="EquityCrowdFunding"
         component={EquityCrowdFunding}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ExploreFantankMarketplace"
+        component={ExploreFantankMarketplace}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="StatsActivity"
+        component={StatsActivity}
         options={{ headerShown: false }}
       />
 

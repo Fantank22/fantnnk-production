@@ -36,7 +36,9 @@ export const MainFantankMarketplace = ({ navigation }) => {
                                 </View>
                             </TouchableOpacity>
 
-                            <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} ><Feather name="menu" size={20} color="#A9A9A9" /></View>
+                            <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} >
+                                <Feather name="menu" size={20} color="#A9A9A9" />
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <Text style={{ fontSize: 18, fontWeight: "700", color: "#fff", textAlign: "center", marginTop: 30 }} >NFT Marketplace</Text>
@@ -148,7 +150,7 @@ export const MainFantankMarketplace = ({ navigation }) => {
 
                 {/* Browse By Category  */}
                 <View style={{ paddingLeft: 15 }} >
-                    <Text style={{ fontWeight: "700", fontSize: 18, color: "#fff", marginVertical: 20 }} >Notable Drops</Text>
+                    <Text style={{ fontWeight: "700", fontSize: 18, color: "#fff", marginVertical: 20 }} >Browse By Category</Text>
                     <ScrollView horizontal >
                         <ImageBackground source={require('../../common/assets/images/fantanknftmarketplace/sports.png')} style={{ width: 190, height: 214, justifyContent: "flex-end", padding: 10, marginRight: 20 }} >
                             <Text style={{ color: "#fff", fontWeight: "700" }} >Sports</Text>
