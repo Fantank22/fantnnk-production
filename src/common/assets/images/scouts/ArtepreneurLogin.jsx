@@ -5,7 +5,6 @@ import { MaterialIcons, Feather } from '@expo/vector-icons'
 import { Icon, Input } from 'native-base'
 import Buttons from '../../Components/Buttons'
 import SocialBtn from "../../Components/SocialBtn";
-import Navigation from '../../Navigation/Index'
 
 const ArtepreneurLogin = ({ navigation }) => {
     const [show, setShow] = React.useState(false);

@@ -23,7 +23,9 @@ export const ExploreFantankMarketplace = ({ navigation }) => {
                                 </View>
                                 <Text style={{ color: "#fff", marginRight: 5 }} >10.80</Text>
                             </View>
-                            <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} ><Ionicons name="heart-outline" size={20} color="#A9A9A9" /></View>
+                            <TouchableOpacity onPress={() => navigation.navigate('Favourites')} style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} >
+                                <Ionicons name="heart-outline" size={20} color="#A9A9A9" />
+                            </TouchableOpacity>
                             <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} ><Feather name="menu" size={20} color="#A9A9A9" /></TouchableOpacity>
                         </View>
                     </View>

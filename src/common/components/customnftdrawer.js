@@ -103,16 +103,20 @@ export const CustomNftDrawer = ({ navigation }) => {
             </View>
           )}
 
-          <HStack
-            alignItems={"center"}
-            style={{ marginTop: 32 }}
-          >
 
-            <Ionicons name="md-copy-outline" size={21} color="#FFFFFF" />
-            <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
-              Resource
-            </Text>
-          </HStack>
+          <TouchableOpacity onPress={() => navigation.navigate('NftAbout')}>
+            <HStack
+              alignItems={"center"}
+              style={{ marginTop: 32 }}
+            >
+
+              <Ionicons name="md-copy-outline" size={21} color="#FFFFFF" />
+              <Text style={{ fontSize: 16, color: "#FFFFFF", marginLeft: 8 }}>
+                About
+              </Text>
+            </HStack>
+          </TouchableOpacity>
+
           <HStack
             alignItems={"center"}
             style={{ marginTop: 32 }}

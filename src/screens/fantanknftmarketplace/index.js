@@ -5,3 +5,4 @@ export * from "./favourites";
 export * from "./connectwallet";
 export * from "./ExploreFantankMarketplace";
 export * from "./StatsActivity";
+export * from "./NftAbout";

@@ -1,6 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { CustomNftDrawer } from "../../common";
-import { ExploreFantankMarketplace, FinancialServices, MainFantankMarketplace, StatsActivity } from "../../screens";
+import { ExploreFantankMarketplace, FinancialServices, MainFantankMarketplace, NftAbout, StatsActivity } from "../../screens";
 
 const Drawer = createDrawerNavigator();
 
@@ -33,6 +33,10 @@ export const NftMarketPlaceDrawerContainer = ({ navigation }) => {
       <Drawer.Screen
         name="StatsActivity"
         component={StatsActivity}
+      />
+      <Drawer.Screen
+        name="NftAbout"
+        component={NftAbout}
       />
     </Drawer.Navigator>
   );

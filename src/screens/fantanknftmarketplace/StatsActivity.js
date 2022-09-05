@@ -1,10 +1,11 @@
-import { View, Text, ScrollView, ImageBackground, Image, StyleSheet, TouchableWithoutFeedback, Animated } from 'react-native'
+import { View, Text, ScrollView, ImageBackground, Image, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Feather, Ionicons, MaterialIcons, EvilIcons, Entypo, AntDesign } from '@expo/vector-icons'
 import { Icon, Input } from 'native-base'
+import { TouchableOpacity } from 'react-native'
 
-export const StatsActivity = () => {
+export const StatsActivity = ({ navigation }) => {
     const [moreDetails, setMoreDetails] = React.useState(1)
 
     return (
@@ -21,13 +22,18 @@ export const StatsActivity = () => {
                                 </View>
                                 <Text style={{ color: "#fff", marginRight: 5 }} >10.80</Text>
                             </View>
-                            <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} ><Ionicons name="heart-outline" size={20} color="#A9A9A9" /></View>
-                            <View style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} ><Feather name="menu" size={20} color="#A9A9A9" /></View>
+                            <TouchableOpacity onPress={() => navigation.navigate('Favourites')} style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, marginHorizontal: 5, borderColor: "#444444", borderWidth: 1 }} >
+                                <Ionicons name="heart-outline" size={20} color="#A9A9A9" />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.openDrawer()} style={{ backgroundColor: "#1A1A1A", borderRadius: 20, paddingVertical: 6, paddingHorizontal: 6, borderColor: "#444444", borderWidth: 1 }} >
+                                <Feather name="menu" size={20} color="#A9A9A9" />
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <Text style={{ fontSize: 18, fontWeight: "700", color: "#fff", textAlign: "center", marginTop: 20 }} >Activity</Text>
                     <View style={{ alignSelf: "center", marginTop: 10 }} >
                         <Input color={'#C4BBBB'} height={50} borderRadius={10} borderWidth={0} backgroundColor={'#2A2A2A'}
+                            selectionColor={'#fff'}
                             w={{
                                 base: "90%",
                                 md: "25%"

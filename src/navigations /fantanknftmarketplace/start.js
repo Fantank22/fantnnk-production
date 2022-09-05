@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FinancialServices, MainFantankMarketplace, SingleNFT, Favourites, ConnectWallet, EquityCrowdFunding, ExploreFantankMarketplace, StatsActivity, } from "../../screens";
+import { FinancialServices, MainFantankMarketplace, SingleNFT, Favourites, ConnectWallet, EquityCrowdFunding, ExploreFantankMarketplace, StatsActivity, NftAbout, } from "../../screens";
 import { NftMarketPlaceDrawerContainer } from "./drawer";
 
 const Stack = createNativeStackNavigator();
@@ -51,6 +51,11 @@ export const FanTankNftMarketplace = () => {
       <Stack.Screen
         name="StatsActivity"
         component={StatsActivity}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="NftAbout"
+        component={NftAbout}
         options={{ headerShown: false }}
       />
 

@@ -86,7 +86,7 @@ export const ArtrepreneurRep = ({ navigation }) => {
             }}
           >
             <TouchableWithoutFeedback
-              onPress={() => navigation.navigate("Login")}
+              onPress={() => navigation.navigate("ArtepreneurLogin")}
             >
               <Text
                 style={{
@@ -103,7 +103,7 @@ export const ArtrepreneurRep = ({ navigation }) => {
               </Text>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback
-              onPress={() => navigation.navigate("Signup")}
+              onPress={() => navigation.navigate("ArtepreneurSignup")}
             >
               <Text
                 style={{
