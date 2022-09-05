@@ -6,6 +6,7 @@ import {
   Image,
   TouchableWithoutFeedback,
   Platform,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { Feather, AntDesign } from "@expo/vector-icons";
@@ -60,43 +61,41 @@ export const BadgesRequirements = ({ navigation }) => {
             flexWrap: "wrap",
           }}
         >
-          <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("BadgeDetail")}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail1")}
+            style={{
+              flexDirection: "column",
+              alignItems: "center",
+              backgroundColor: "#252525",
+              justifyContent: "center",
+              width: "48%",
+              paddingVertical: 20,
+              borderWidth: 1,
+              borderColor: "#535353",
+              position: "relative",
+              marginTop: 18,
+            }}
           >
+            <Image
+              style={{ height: 48, width: 73 }}
+              source={require("../../common/assets/images/badge/badge1.png")}
+            />
+            <Text style={{ color: "white", fontSize: 16 }}>Badges 1</Text>
             <View
               style={{
-                flexDirection: "column",
-                alignItems: "center",
-                backgroundColor: "#252525",
-                justifyContent: "center",
-                width: "48%",
-                paddingVertical: 20,
-                borderWidth: 1,
-                borderColor: "#535353",
-                position: "relative",
-                marginTop: 18,
+                borderColor: "#008B88",
+                borderWidth: 3,
+                width: "102%",
+                position: "absolute",
+                bottom: -7,
+                borderBottomLeftRadius: 4,
+                borderBottomRightRadius: 4,
               }}
-            >
-              <Image
-                style={{ height: 48, width: 73 }}
-                source={require("../../common/assets/images/badge/badge1.png")}
-              />
-              <Text style={{ color: "white", fontSize: 16 }}>Badges 1</Text>
-              <View
-                style={{
-                  borderColor: "#008B88",
-                  borderWidth: 3,
-                  width: "102%",
-                  position: "absolute",
-                  bottom: -7,
-                  borderBottomLeftRadius: 4,
-                  borderBottomRightRadius: 4,
-                }}
-              ></View>
-            </View>
-          </TouchableWithoutFeedback>
+            ></View>
+          </TouchableOpacity>
 
-          <View
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail2")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -126,8 +125,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail3")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -157,8 +157,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail4")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -188,8 +189,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail5")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -219,8 +221,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail6")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -250,8 +253,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail7")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -281,8 +285,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail8")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -312,8 +317,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail9")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -343,8 +349,9 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("BadgeDetail10")}
             style={{
               flexDirection: "column",
               alignItems: "center",
@@ -374,7 +381,7 @@ export const BadgesRequirements = ({ navigation }) => {
                 borderBottomRightRadius: 4,
               }}
             ></View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

@@ -6,24 +6,23 @@ import {
   TouchableWithoutFeedback,
   Image,
   Platform,
-  ScrollView,
   KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
-import { Button, Icon, Input } from "native-base";
+import { Button, Checkbox, Icon, Input } from "native-base";
 
 import { Buttons, SocianBtn } from "../../common";
 import { StatusBar } from "expo-status-bar";
 
-
-
-export const ArtepreneurLogin = ({ navigation }) => {
+export const ArtepreneurSignup = ({ navigation }) => {
   const [show, setShow] = React.useState(false);
 
   return (
     <View style={styles.container}>
       <StatusBar style={'light'} />
+
       <ImageBackground
         source={require("../../common/assets/images/artrepreneurrep/loginbg.png")}
         style={{ height: "100%" }}
@@ -46,7 +45,6 @@ export const ArtepreneurLogin = ({ navigation }) => {
               >
                 <Text style={{ color: "#378EF0" }}>Need Help?</Text>
               </TouchableWithoutFeedback>
-              {/* <Feather name="menu" size={24} color="white" /> */}
             </View>
 
             <Text
@@ -72,7 +70,7 @@ export const ArtepreneurLogin = ({ navigation }) => {
                 fontWeight: "700",
               }}
             >
-              Log In
+              Sign UP
             </Text>
 
             <View>
@@ -150,18 +148,19 @@ export const ArtepreneurLogin = ({ navigation }) => {
                   placeholder="Enter  scout id"
                 />
               </View>
-              <Text
-                style={{ color: "#378EF0", alignSelf: "flex-end", marginTop: 10 }}
-              >
-                forgot scout ID #?
-              </Text>
+              <View style={{ marginTop: 10 }}>
+                <Checkbox isChecked colorScheme="blue">
+                  <Text style={{ color: "#B1B1B1" }} > Finish list Screen <Text style={{ color: "#378EF0" }}>TERMS & CONDITIONS</Text> </Text>
+                </Checkbox>
+              </View>
+
               <View style={{ marginVertical: 10 }}>
                 <Buttons onPress={() => alert('ok')} title={'Login'} fillBtn={true} />
                 <Text
                   style={{ color: "#B7B7B7", alignSelf: "center", marginTop: 10 }}
                 >
                   Don’t have an account ?{" "}
-                  <Text onPress={() => navigation.navigate('artpreneursignup')} style={{ color: "#378EF0" }}>SIGN UP</Text>
+                  <Text onPress={() => navigation.navigate('ArtepreneurLogin')} style={{ color: "#378EF0" }}>LOG IN</Text>
                 </Text>
               </View>
               <View

@@ -11,6 +11,7 @@ import { CareersStartContainer } from "./Careers/start";
 import { ServiceContainer } from "./service/start";
 import { InformationTechnologyContainer } from "./informationtechnology";
 import { EventsTicketingContainer } from "./eventsticketing/start";
+import { SpacStartContainer } from "./spac";
 
 const Stack = createNativeStackNavigator();
 
@@ -72,6 +73,11 @@ export const StartApp = () => {
       <Stack.Screen
         name="EventsTicketingContainer"
         component={EventsTicketingContainer}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SpacStartContainer"
+        component={SpacStartContainer}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

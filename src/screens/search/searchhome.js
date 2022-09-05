@@ -23,19 +23,6 @@ export const SearchHome = ({ navigation }) => {
                             <Feather name="filter" size={24} color={'#C5BBBB'} />
                         </View>
                     </TouchableOpacity>
-
-                    {/* <Input
-                        color={"#fff"}
-                        marginTop={5}
-                        borderRadius={10}
-                        borderWidth={0}
-                        fontSize={Platform.OS === 'ios' ? 16 : 14}
-                        paddingTop={Platform.OS === 'ios' ? 4 : 0}
-                        paddingBottom={Platform.OS === 'ios' ? 4 : 0}
-                        backgroundColor={'#2A2A2A'} w={{ base: "100%", md: "25%" }}
-                        InputLeftElement={<Icon as={<EvilIcons name="search" />} size={7} ml="3" color="muted.300" />}
-                        InputRightElement={<Icon as={<Feather name="filter" />} size={5} mr="3" color="muted.300" />}
-                        placeholder="artists, scouts, geographies, etc" /> */}
                 </ImageBackground>
                 <View style={{ marginTop: 20 }} >
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginVertical: 15 }} >
