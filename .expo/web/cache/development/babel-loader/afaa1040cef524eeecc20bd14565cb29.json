@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./forgotheader\";","map":{"version":3,"names":[],"sources":["/Users/mdabdullahalnoman/WorkBackUp/Fantank/exchange/fantank-dev-shared/src/common/components/forgot/index.js"],"sourcesContent":["export * from './forgotheader'"],"mappings":"AAAA"},"metadata":{},"sourceType":"module"}

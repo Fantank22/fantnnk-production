@@ -23,4 +23,5 @@ export * from "./eventsticketing";
 export * from "./backendnavigation";
 export * from "./equitycrowdfunding";
 export * from "./fanbit";
+export * from "./spac";
 

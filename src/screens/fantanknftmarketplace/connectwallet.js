@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar'
 import { Entypo } from '@expo/vector-icons';
 import { Input } from 'native-base';
 
-export const ConnectWallet = ({navigation}) => {
+export const ConnectWallet = ({ navigation }) => {
   return (
     <View style={styles.container} >
       <StatusBar style="light" />
@@ -66,6 +66,11 @@ export const ConnectWallet = ({navigation}) => {
         </View>
 
       </ScrollView>
+
+      <Image
+        source={require("../../common/assets/images/3.png")}
+        style={styles.bgImage1}
+      />
     </View>
   )
 }
@@ -75,6 +80,12 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingHorizontal: 15,
     flex: 1
-  }
+  },
+  bgImage1: {
+    position: "absolute",
+    top: 40,
+    right: 0,
+    zIndex: -1000,
+  },
 })
 

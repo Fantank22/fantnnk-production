@@ -42,7 +42,7 @@ export const HomeScreen = ({ navigation }) => {
             The Arts & Entertainment Ecosystem
           </Text>
 
-          <TouchableOpacity onPress={() => navigation.navigate('SearchHome')} >
+          <TouchableOpacity onPress={() => navigation.navigate('SearchStartContainer')} >
             <View style={{ backgroundColor: "#2B2B2B", flexDirection: "row", alignItems: "center", paddingVertical: 10, paddingHorizontal: 20, borderRadius: 10 }} >
               <EvilIcons name="search" size={24} color={'#C5BBBB'} />
               <Text style={{ color: "#C5BBBB", fontSize: 12, marginLeft: 10 }} >Artists, Scouts, Art Forms, etc</Text>

@@ -10,29 +10,24 @@ import {
 } from "react-native";
 import React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { Image } from "react-native";
 
 export const ArtrepreneurRep4 = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style={'light'} />
       <ScrollView>
         <ImageBackground
           source={require("../../common/assets/images/artrepreneurrep/artrepreneurRepbg4.png")}
           style={{
             height: 271.54,
             paddingHorizontal: 15,
-            paddingTop: 10,
           }}
         >
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text
-              style={{
-                color: "white",
-                marginTop: Platform === "ios" ? 60 : 30,
-              }}
-            >
-              {" "}
-              <MaterialIcons name="arrow-back-ios" size={24} color="white" />
-            </Text>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 15 }}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="white" />
           </TouchableOpacity>
           <Text
             style={{
@@ -60,23 +55,27 @@ export const ArtrepreneurRep4 = ({ navigation }) => {
             <Text style={{ color: "#378EF0" }}>$45 / month</Text> business
             support & services fee.{" "}
           </Text>
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             onPress={() => navigation.navigate("WhyArtrepreneurRep")}
+            style={{
+              backgroundColor: "#378EF0",
+              alignSelf: "center",
+              paddingVertical: 10,
+              paddingHorizontal: 40,
+              borderRadius: 20,
+            }}
           >
             <Text
               style={{
-                backgroundColor: "#378EF0",
+
                 fontSize: 16,
                 color: "#fff",
-                alignSelf: "center",
-                paddingVertical: 10,
-                paddingHorizontal: 40,
-                borderRadius: 20,
+
               }}
             >
               Enroll Now
             </Text>
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         </ImageBackground>
         <View style={{ paddingHorizontal: 15, paddingTop: 30 }}>
           <Text style={{ color: "#fff" }}>
@@ -139,7 +138,16 @@ export const ArtrepreneurRep4 = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+
+      <Image
+        style={styles.bgImage1}
+        source={require('../../common/assets/images/3.png')}
+      />
+      <Image
+        style={styles.bgImage2}
+        source={require('../../common/assets/images/5.png')}
+      />
+    </SafeAreaView>
   );
 };
 
@@ -147,5 +155,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
+    paddingTop: Platform === "ios" ? 0 : 40,
   },
+  bgImage1: {
+    position: "absolute",
+    top: 40,
+    right: 0,
+    zIndex: -1000
+  },
+  bgImage2: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    zIndex: -1000
+  }
 });

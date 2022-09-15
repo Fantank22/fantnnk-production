@@ -4,22 +4,17 @@ import {
   ArtepreneurLogin,
   ArtrepreneurRep4,
   WhyArtrepreneurRep,
-  TextReviewsArtrepreneurRep,
+  ArtepreneurSignup,
+  NeedHelp,
+  SubmitQuestion,
+  ArtreneurTextReviews,
+  ArtreneurVideoReviews,
+  ArtrepreneorFaq,
 } from "../../screens";
 
 const Stack = createNativeStackNavigator();
 
 export const ArtrepreneurStartContainer = () => {
-  const getHeaderOption = (title) => {
-    return {
-      title: title,
-      headerStyle: {
-        backgroundColor: "#121212",
-        color: "#fff",
-      },
-      headerTintColor: "#fff",
-    };
-  };
 
   return (
     <Stack.Navigator>
@@ -31,6 +26,11 @@ export const ArtrepreneurStartContainer = () => {
       <Stack.Screen
         name="ArtepreneurLogin"
         component={ArtepreneurLogin}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ArtepreneurSignup"
+        component={ArtepreneurSignup}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -46,6 +46,31 @@ export const ArtrepreneurStartContainer = () => {
       <Stack.Screen
         name="TextReviewsArtrepreneurRep"
         component={WhyArtrepreneurRep}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="NeedHelp"
+        component={NeedHelp}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SubmitQuestion"
+        component={SubmitQuestion}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ArtreneurTextReviews"
+        component={ArtreneurTextReviews}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ArtreneurVideoReviews"
+        component={ArtreneurVideoReviews}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ArtrepreneorFaq"
+        component={ArtrepreneorFaq}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

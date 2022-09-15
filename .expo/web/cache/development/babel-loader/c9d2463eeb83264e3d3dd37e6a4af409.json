@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./artistpage2\";","map":{"version":3,"names":[],"sources":["/Users/mdabdullahalnoman/WorkBackUp/Fantank/exchange/fantank-dev-shared/src/screens/artist2/index.js"],"sourcesContent":["export * from \"./artistpage2\";\n"],"mappings":"AAAA"},"metadata":{},"sourceType":"module"}
