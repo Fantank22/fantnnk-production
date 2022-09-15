@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./spac\";","map":{"version":3,"names":[],"sources":["/Users/mdabdullahalnoman/WorkBackUp/Fantank/exchange/fantank-dev-shared/src/screens/spac/index.js"],"sourcesContent":["export * from './spac'"],"mappings":"AAAA"},"metadata":{},"sourceType":"module"}

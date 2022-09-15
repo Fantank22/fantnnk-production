@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
   Platform,
-  ImageBackground
+  ImageBackground,
 } from "react-native";
 import { FormControl, Input, Button } from "native-base";
 
@@ -109,11 +109,13 @@ export const LoginScreen = ({ navigation }) => {
       <MyKeyboardAvoidingView>
         <ScrollView>
           <View>
-            <ImageBackground source={require('../../common/assets/images/login/background.png')}
+            <ImageBackground
+              source={require("../../common/assets/images/login/background.png")}
               style={{
-                height: Platform.OS === 'ios' ? 490 : 430,
-                padding: 20
-              }} >
+                height: Platform.OS === "ios" ? 490 : 430,
+                padding: 20,
+              }}
+            >
               <View
                 style={{
                   display: "flex",
@@ -126,11 +128,12 @@ export const LoginScreen = ({ navigation }) => {
                   source={require("../../common/assets/images/logo-text.png")}
                 />
               </View>
-              <Text style={[styles.screenTitle, { marginTop: 20 }]}>Welcome back! </Text>
-              <Text style={[styles.screenTitle, { marginBottom: 30 }]}>Enter email and password to sign in.</Text>
-
-
-
+              <Text style={[styles.screenTitle, { marginTop: 20 }]}>
+                Welcome back!{" "}
+              </Text>
+              <Text style={[styles.screenTitle, { marginBottom: 30 }]}>
+                Enter email and password to sign in.
+              </Text>
 
               <FormControl isInvalid={form.email.error} w="100%" mb={4}>
                 <Input
@@ -139,7 +142,7 @@ export const LoginScreen = ({ navigation }) => {
                   onChangeText={(value) => inputHandle("email", value, setForm)}
                   type="email"
                   color={"#fff"}
-                  value={'prince@gmail.com'}
+                  value={""}
                 />
                 <FormControl.ErrorMessage>
                   Try different from previous passwords.
@@ -155,7 +158,7 @@ export const LoginScreen = ({ navigation }) => {
                   }
                   type="password"
                   color={"#fff"}
-                  value={'prince'}
+                  value={""}
                 />
                 <FormControl.ErrorMessage>
                   Try different from previous passwords.
@@ -168,9 +171,13 @@ export const LoginScreen = ({ navigation }) => {
                   <Text style={styles.forgetText}>Forgot Password ?</Text>
                 </TouchableOpacity>
               </View>
-              <Buttons onPress={() => loginHandle()} title={'Sign In'} fillBtn />
+              <Buttons
+                onPress={() => loginHandle()}
+                title={"Sign In"}
+                fillBtn
+              />
             </ImageBackground>
-            <View style={{ paddingHorizontal: 20, marginTop: 40 }} >
+            <View style={{ paddingHorizontal: 20, marginTop: 40 }}>
               <Divider tip="OR" />
               <SocianBtn
                 iconName="facebook-f"
@@ -191,10 +198,7 @@ export const LoginScreen = ({ navigation }) => {
                 iconColor="black"
                 name="Apple"
               />
-
             </View>
-
-
 
             <View style={styles.skipLogin}>
               <TouchableOpacity onPress={() => navigation.navigate("Home")}>
